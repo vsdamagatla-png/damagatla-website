@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Telugu:ital@0;1&family=Petrona:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Serif+Telugu&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --soil:#5C3D1E;--clay:#8B5E3C;--turmeric:#D4880A;--gold:#C9821A;
+  --cream:#FAF5E4;--parchment:#F0E6C8;--leaf:#1A5C2A;--sage:#2E7D44;
+  --river:#1A4A6B;--copper:#A0522D;--apblue:#003F87;--apyellow:#FFD700;
+  --text-dark:#2C1810;--text-mid:#5C3D1E;
+}
+body{font-family:'Petrona',Georgia,serif;background:var(--cream);color:var(--text-dark);overflow-x:hidden;}
+
+.header-border-top{height:8px;background:repeating-linear-gradient(90deg,#003F87 0,#003F87 20px,#FFD700 20px,#FFD700 40px,#003F87 40px);}
+.header{background:linear-gradient(135deg,#001E52 0%,#003F87 50%,#1A5C2A 100%);position:relative;overflow:hidden;}
+.header-pattern{position:absolute;inset:0;opacity:0.06;background-image:radial-gradient(circle,#fff 1px,transparent 1px);background-size:36px 36px;}
+.header-inner{position:relative;z-index:2;display:grid;grid-template-columns:110px 1fr 110px;align-items:center;padding:24px 40px;gap:20px;}
+.emblem{width:90px;height:90px;border-radius:50%;background:radial-gradient(circle,#FFF8E1 0%,#FFD700 60%,#B8860B 100%);border:3px solid #FFD700;display:flex;align-items:center;justify-content:center;font-size:32px;box-shadow:0 0 0 5px rgba(255,215,0,0.2);}
+.header-center{text-align:center;}
+.header-ap{font-family:'Noto Serif Telugu',serif;font-size:13px;color:#FFD700;letter-spacing:2px;margin-bottom:4px;}
+.header-title{font-family:'Tiro Telugu',serif;font-size:30px;font-weight:600;color:#FAF5E4;line-height:1.2;text-shadow:1px 2px 8px rgba(0,0,0,0.5);}
+.header-subtitle{font-family:'Petrona',serif;font-size:13px;color:#FFD700;margin-top:6px;letter-spacing:0.5px;}
+.header-meta{font-family:'Petrona',serif;font-size:12px;color:#A8C8FF;margin-top:4px;}
+.right-emblem{display:flex;flex-direction:column;align-items:center;gap:8px;}
+.right-emblem .badge{background:rgba(255,215,0,0.15);border:1px solid #FFD700;color:#FFD700;font-size:10px;padding:4px 8px;border-radius:4px;text-align:center;font-family:'Petrona',serif;}
+.header-border-bottom{height:8px;background:repeating-linear-gradient(90deg,#FFD700 0,#FFD700 20px,#003F87 20px,#003F87 40px,#FFD700 40px);}
+
+.nav{background:#1A5C2A;display:flex;justify-content:center;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,0.3);}
+.nav a{color:#C8E6A0;text-decoration:none;padding:12px 18px;font-family:'Petrona',serif;font-size:13px;border-right:1px solid rgba(255,255,255,0.1);transition:all 0.2s;}
+.nav a:hover{background:rgba(255,255,255,0.1);color:#FAF5E4;}
+.nav a:first-child{border-left:1px solid rgba(255,255,255,0.1);}
+
+.hero{background:linear-gradient(180deg,#F0E6C8 0%,#FAF5E4 100%);padding:28px 40px;display:flex;align-items:center;gap:32px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;right:-60px;top:-40px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(0,63,135,0.06) 0%,transparent 70%);}
+.hero-text{flex:1}
+.hero-title{font-family:'Tiro Telugu',serif;font-size:24px;color:var(--apblue);margin-bottom:8px;line-height:1.3;}
+.hero-desc{font-size:14px;color:var(--text-mid);line-height:1.8;max-width:580px;}
+.hero-stats{display:flex;gap:16px;flex-shrink:0;}
+.stat-card{background:#fff;border:1px solid #FFD700;border-top:3px solid var(--apblue);border-radius:8px;padding:14px 18px;text-align:center;min-width:90px;}
+.stat-num{font-family:'Tiro Telugu',serif;font-size:26px;color:var(--apblue);font-weight:600;}
+.stat-label{font-size:11px;color:var(--clay);margin-top:4px;line-height:1.3;}
+
+.section{padding:36px 40px;}
+.section-title{font-family:'Tiro Telugu',serif;font-size:22px;color:var(--soil);margin-bottom:6px;display:flex;align-items:center;gap:12px;}
+.section-title::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,var(--apblue),transparent);}
+.section-sub{font-size:13px;color:var(--clay);margin-bottom:22px;margin-top:4px;}
+
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.about-card{background:#fff;border:0.5px solid #B8C8E0;border-left:4px solid var(--apblue);border-radius:8px;padding:18px;}
+.about-card h3{font-family:'Tiro Telugu',serif;font-size:15px;color:var(--apblue);margin-bottom:8px;}
+.about-card p{font-size:14px;color:var(--text-mid);line-height:1.8;}
+
+/* SCHEMES */
+.schemes-section{background:#001E52;padding:36px 40px;}
+.schemes-section .section-title{color:#FFD700;}
+.schemes-section .section-title::after{background:linear-gradient(90deg,#FFD700,transparent);}
+.schemes-section .section-sub{color:#A8C8FF;}
+
+.schemes-group-label{font-family:'Petrona',serif;font-size:12px;color:#6BAED6;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:12px;padding-bottom:6px;border-bottom:0.5px solid rgba(255,215,0,0.2);}
+.schemes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:28px;}
+.schemes-grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-bottom:28px;}
+
+.scheme-card{background:rgba(255,255,255,0.06);border:0.5px solid rgba(255,215,0,0.3);border-top:3px solid #FFD700;border-radius:8px;padding:18px;transition:background 0.2s;cursor:pointer;}
+.scheme-card:hover{background:rgba(255,255,255,0.11);}
+.scheme-card.upcoming{border-top:3px solid #FF9800;border:0.5px solid rgba(255,152,0,0.4);border-top:3px solid #FF9800;background:rgba(255,152,0,0.07);}
+.scheme-card.upcoming:hover{background:rgba(255,152,0,0.12);}
+.scheme-icon{font-size:26px;margin-bottom:10px;}
+.scheme-name{font-family:'Tiro Telugu',serif;font-size:15px;color:#FAF5E4;margin-bottom:4px;}
+.scheme-telugu{font-family:'Noto Serif Telugu',serif;font-size:12px;color:#FFD700;margin-bottom:6px;}
+.scheme-desc{font-size:13px;color:#A8C8FF;line-height:1.6;}
+.scheme-tag{display:inline-block;margin-top:10px;font-size:11px;background:rgba(255,215,0,0.2);color:#FFD700;padding:3px 10px;border-radius:4px;border:0.5px solid rgba(255,215,0,0.4);}
+.scheme-tag.orange{background:rgba(255,152,0,0.2);color:#FFB74D;border-color:rgba(255,152,0,0.4);}
+.upcoming-badge{display:inline-block;font-size:10px;background:#FF9800;color:#fff;padding:2px 8px;border-radius:3px;margin-bottom:8px;font-family:'Petrona',serif;letter-spacing:0.5px;}
+
+/* STAFF */
+.staff-section{background:#F5F0E4;padding:36px 40px;}
+.staff-section .section-title{color:var(--soil);}
+.staff-grid-top{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:16px;}
+.staff-grid-mid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:16px;}
+.staff-grid-bot{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.staff-card{background:#fff;border:0.5px solid #B8C8E0;border-radius:8px;padding:16px;display:flex;align-items:center;gap:14px;}
+.staff-avatar{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:600;color:#FAF5E4;flex-shrink:0;font-family:'Petrona',serif;border:2px solid;}
+.av-blue{background:linear-gradient(135deg,#003F87,#1A5C9A);border-color:#003F87;}
+.av-green{background:linear-gradient(135deg,#1A5C2A,#2E7D44);border-color:#1A5C2A;}
+.av-soil{background:linear-gradient(135deg,#5C3D1E,#8B5E3C);border-color:#5C3D1E;}
+.av-copper{background:linear-gradient(135deg,#8B3A1E,#C0522D);border-color:#8B3A1E;}
+.av-purple{background:linear-gradient(135deg,#4A1E6B,#7B3AA0);border-color:#4A1E6B;}
+.staff-info{flex:1;min-width:0;}
+.staff-name{font-family:'Petrona',serif;font-size:13px;font-weight:500;color:var(--text-dark);margin-bottom:3px;}
+.staff-role{font-size:12px;color:var(--apblue);font-weight:500;}
+.staff-grade{font-size:11px;color:var(--clay);margin-top:2px;}
+.group-label{font-size:12px;color:var(--clay);margin-bottom:12px;font-family:'Petrona',serif;}
+
+.notices-section{background:#FAF0DC;padding:36px 40px;}
+.notices-list{display:flex;flex-direction:column;gap:12px;}
+.notice-item{background:#fff;border:0.5px solid #D4A843;border-left:4px solid var(--apblue);border-radius:6px;padding:14px 18px;display:flex;align-items:flex-start;gap:14px;}
+.notice-date{font-size:11px;color:#fff;background:var(--apblue);border-radius:4px;padding:4px 8px;flex-shrink:0;text-align:center;min-width:52px;line-height:1.4;font-family:'Petrona',serif;}
+.notice-text{font-size:14px;color:var(--text-dark);line-height:1.6;}
+.notice-text span{font-size:12px;color:var(--clay);display:block;margin-top:3px;}
+.notice-new{font-size:10px;background:#D4880A;color:#fff;padding:2px 7px;border-radius:3px;vertical-align:middle;margin-left:6px;font-family:'Petrona',serif;}
+
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+.gallery-item{border-radius:8px;overflow:hidden;border:2px solid var(--parchment);aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;font-size:32px;position:relative;}
+.gallery-item:nth-child(1){background:linear-gradient(135deg,#003F87,#1A5C9A);}
+.gallery-item:nth-child(2){background:linear-gradient(135deg,#1A5C2A,#2E7D44);}
+.gallery-item:nth-child(3){background:linear-gradient(135deg,#5C3D1E,#8B5E3C);}
+.gallery-item:nth-child(4){background:linear-gradient(135deg,#001E52,#003F87);}
+.gallery-label{position:absolute;bottom:0;left:0;right:0;background:rgba(0,0,0,0.55);color:#FAF5E4;font-size:11px;padding:6px 10px;font-family:'Petrona',serif;}
+
+.contact-section{background:linear-gradient(135deg,#001E52,#003F87);padding:36px 40px;}
+.contact-section .section-title{color:#FFD700;}
+.contact-section .section-title::after{background:linear-gradient(90deg,#FFD700,transparent);}
+.contact-section .section-sub{color:#A8C8FF;}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;}
+.contact-card{background:rgba(255,255,255,0.07);border:0.5px solid rgba(255,215,0,0.3);border-radius:8px;padding:20px;}
+.contact-card-title{font-family:'Tiro Telugu',serif;font-size:14px;color:#FFD700;margin-bottom:12px;}
+.contact-row{display:flex;gap:10px;margin-bottom:10px;}
+.contact-label{font-size:12px;color:#6BAED6;min-width:64px;flex-shrink:0;}
+.contact-value{font-size:13px;color:#F0E6C8;line-height:1.5;}
+
+.muggu-divider{height:20px;background:repeating-linear-gradient(90deg,#FFD700 0,#FFD700 10px,#003F87 10px,#003F87 20px,#1A5C2A 20px,#1A5C2A 30px,#003F87 30px,#003F87 40px,#FFD700 40px,#FFD700 50px);opacity:0.7;}
+.footer{background:#001130;padding:18px 40px;text-align:center;font-size:12px;color:#4A6A9A;font-family:'Petrona',serif;}
+.footer-telugu{font-family:'Noto Serif Telugu',serif;color:#FFD700;font-size:13px;margin-bottom:6px;}
+.footer-top{border-top:1px solid #1A3060;padding-top:14px;color:#4A6A9A;}
+</style>
+</head>
+<body>
+
+<div class="header-border-top"></div>
+<header class="header">
+  <div class="header-pattern"></div>
+  <div class="header-inner">
+    <div class="emblem">🏛️</div>
+    <div class="header-center">
+      <div class="header-ap">ఆంధ్రప్రదేశ్ రాష్ట్ర ప్రభుత్వం</div>
+      <div class="header-title">స్వర్ణ గ్రామం స్వర్ణ వార్డు</div>
+      <div class="header-subtitle">Swarna Gramam Swarna Ward — Damagatla Office</div>
+      <div class="header-meta">Damagatla Village · Nandikotkur Mandal · Nandyal District · Andhra Pradesh</div>
+    </div>
+    <div class="right-emblem">
+      <div class="badge">Govt. of<br>Andhra Pradesh</div>
+      <div class="badge">Gram<br>Panchayat</div>
+    </div>
+  </div>
+</header>
+<div class="header-border-bottom"></div>
+
+<nav class="nav">
+  <a href="#home">🏠 Home</a>
+  <a href="#about">About</a>
+  <a href="#schemes">Schemes</a>
+  <a href="#staff">Staff</a>
+  <a href="#notices">Notices</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<div class="hero" id="home">
+  <div class="hero-text">
+    <div class="hero-title">Building a Golden Village, Ward by Ward</div>
+    <div class="hero-desc">The Damagatla SGSW Office works to implement government welfare schemes, improve village infrastructure, and uplift every household. Located in Nandikotkur Mandal, Nandyal District, we serve with transparency and dedication under the Government of Andhra Pradesh.</div>
+  </div>
+  <div class="hero-stats">
+    <div class="stat-card"><div class="stat-num">3,800+</div><div class="stat-label">Village<br>Population</div></div>
+    <div class="stat-card"><div class="stat-num">10</div><div class="stat-label">Staff<br>Members</div></div>
+    <div class="stat-card"><div class="stat-num">6+</div><div class="stat-label">Active<br>Schemes</div></div>
+  </div>
+</div>
+
+<div class="muggu-divider"></div>
+
+<div class="section" id="about">
+  <div class="section-title">About the Office</div>
+  <div class="section-sub">Serving Damagatla village under Nandikotkur Mandal, Nandyal District, Andhra Pradesh</div>
+  <div class="about-grid">
+    <div class="about-card"><h3>🌾 Our Mission</h3><p>The Swarna Gramam Swarna Ward programme envisions transforming Damagatla into a self-sustaining, prosperous village — ensuring clean water, proper sanitation, good roads, livelihoods, and social security for every family in our community.</p></div>
+    <div class="about-card"><h3>🏗️ Village Development</h3><p>We coordinate with DRDA, Gram Panchayat, and line departments to plan and execute infrastructure works — roads, drains, streetlights, and public amenities — under approved budgets through the Engineering Assistant's supervision.</p></div>
+    <div class="about-card"><h3>📋 Welfare & Social Security</h3><p>Our Welfare Assistant and field staff facilitate pensions, housing, women & child welfare, and health services. We assist residents with documentation, applications, and grievance resolution at the Panchayat Office.</p></div>
+    <div class="about-card"><h3>🌿 Health & Community</h3><p>Our ANM and AHA ensure maternal health, immunization, and health awareness. Village Servants and Assistants connect households to government services and maintain village-level records and attendance.</p></div>
+  </div>
+</div>
+
+<!-- SCHEMES -->
+<div class="schemes-section" id="schemes">
+  <div class="section-title">Government Schemes</div>
+  <div class="section-sub">Welfare programmes implemented in Damagatla under AP Government</div>
+
+  <!-- Active Schemes -->
+  <div class="schemes-group-label">Active Schemes</div>
+  <div class="schemes-grid">
+    <div class="scheme-card">
+      <div class="scheme-icon">👩‍👧</div>
+      <div class="scheme-name">Thalliki Vandanam</div>
+      <div class="scheme-telugu">తల్లికి వందనం</div>
+      <div class="scheme-desc">Financial assistance provided to mothers on Children's Day to support child nutrition, education, and overall family well-being.</div>
+      <span class="scheme-tag">Women & Child</span>
+    </div>
+    <div class="scheme-card">
+      <div class="scheme-icon">🛺</div>
+      <div class="scheme-name">Auto Driver La Seva Lo</div>
+      <div class="scheme-telugu">ఆటో డ్రైవర్ల సేవలో</div>
+      <div class="scheme-desc">Financial support and recognition for auto drivers serving rural communities, covering fuel costs, insurance, and vehicle maintenance assistance.</div>
+      <span class="scheme-tag">Transport Workers</span>
+    </div>
+    <div class="scheme-card">
+      <div class="scheme-icon">🌾</div>
+      <div class="scheme-name">Annadatha Sukhibava</div>
+      <div class="scheme-telugu">అన్నదాత సుఖీభవ</div>
+      <div class="scheme-desc">Crop investment support and insurance for farmers to ensure financial security during crop loss due to natural calamities or market volatility.</div>
+      <span class="scheme-tag">Agriculture</span>
+    </div>
+    <div class="scheme-card">
+      <div class="scheme-icon">🧓</div>
+      <div class="scheme-name">NTR Bharosa Pension</div>
+      <div class="scheme-telugu">ఎన్టీఆర్ భరోసా పెన్షన్</div>
+      <div class="scheme-desc">Monthly financial pension assistance of ₹3,000 to elderly, widows, differently-abled persons, weavers, and toddy workers in need of social security.</div>
+      <span class="scheme-tag">Social Security</span>
+    </div>
+    <div class="scheme-card">
+      <div class="scheme-icon">🎓</div>
+      <div class="scheme-name">Post Metric Scholarships</div>
+      <div class="scheme-telugu">పోస్ట్ మెట్రిక్ స్కాలర్షిప్</div>
+      <div class="scheme-desc">Scholarships under MTF (Merit cum Means) and RTF (Reimbursement of Tuition Fee) for SC/ST/BC/Minority students pursuing higher education beyond Class 10.</div>
+      <span class="scheme-tag">MTF / RTF · Education</span>
+    </div>
+  </div>
+
+  <!-- Upcoming Schemes -->
+  <div class="schemes-group-label" style="color:#FFB74D;border-color:rgba(255,152,0,0.3);">Upcoming Schemes — CBN Vision Groups</div>
+  <div class="schemes-grid-2">
+    <div class="scheme-card upcoming">
+      <div class="upcoming-badge">UPCOMING</div>
+      <div class="scheme-icon">👥</div>
+      <div class="scheme-name">CBN Vision Groups</div>
+      <div class="scheme-telugu">సీబీఎన్ విజన్ గ్రూప్స్</div>
+      <div class="scheme-desc">Community-level groups to be formed under the vision of CM N. Chandrababu Naidu, focusing on village-level planning, self-employment, skill development, and collective economic progress for rural households.</div>
+      <span class="scheme-tag orange">Village Groups</span>
+    </div>
+    <div class="scheme-card upcoming">
+      <div class="upcoming-badge">UPCOMING</div>
+      <div class="scheme-icon">🌱</div>
+      <div class="scheme-name">CBN Vision — Rural Livelihood</div>
+      <div class="scheme-telugu">గ్రామీణ జీవనోపాధి</div>
+      <div class="scheme-desc">Planned extension of CBN Vision Groups focusing on micro-enterprise formation, SHG linkage, and financial literacy for women and youth groups in Damagatla village.</div>
+      <span class="scheme-tag orange">Livelihoods</span>
+    </div>
+  </div>
+</div>
+
+<!-- STAFF -->
+<div class="staff-section" id="staff">
+  <div class="section-title">Office Staff</div>
+  <div class="section-sub">Dedicated officials serving the people of Damagatla</div>
+
+  <div class="group-label">Panchayat Secretaries</div>
+  <div class="staff-grid-top">
+    <div class="staff-card">
+      <div class="staff-avatar av-blue">GM</div>
+      <div class="staff-info"><div class="staff-name">G. Mallikarjuna</div><div class="staff-role">Panchayat Secretary</div><div class="staff-grade">Grade V</div></div>
+    </div>
+    <div class="staff-card">
+      <div class="staff-avatar av-blue">BN</div>
+      <div class="staff-info"><div class="staff-name">B. Naresh Achari</div><div class="staff-role">Panchayat Secretary</div><div class="staff-grade">Grade VI</div></div>
+    </div>
+  </div>
+
+  <div class="group-label" style="margin-top:18px;">Welfare, Engineering & Field Staff</div>
+  <div class="staff-grid-mid">
+    <div class="staff-card">
+      <div class="staff-avatar av-green">DM</div>
+      <div class="staff-info"><div class="staff-name">D. Madhu</div><div class="staff-role">Welfare Assistant</div></div>
+    </div>
+    <div class="staff-card">
+      <div class="staff-avatar av-soil">GJ</div>
+      <div class="staff-info"><div class="staff-name">G. Jayachandra</div><div class="staff-role">Engineering Assistant</div></div>
+    </div>
+    <div class="staff-card">
+      <div class="staff-avatar av-green">GL</div>
+      <div class="staff-info"><div class="staff-name">G. Lakshmamma</div><div class="staff-role">GMSK</div></div>
+    </div>
+  </div>
+
+  <div class="group-label" style="margin-top:18px;">Health, Village Servants & Assistants</div>
+  <div class="staff-grid-bot">
+    <div class="staff-card">
+      <div class="staff-avatar av-copper">GN</div>
+      <div class="staff-info"><div class="staff-name">G. Noorun Bi</div><div class="staff-role">ANM</div><div class="staff-grade">Auxiliary Nurse Midwife</div></div>
+    </div>
+    <div class="staff-card">
+      <div class="staff-avatar av-copper">SS</div>
+      <div class="staff-info"><div class="staff-name">S. Sridevi</div><div class="staff-role">AHA</div><div class="staff-grade">Accredited Health Asst.</div></div>
+    </div>
+    <div class="staff-card">
+      <div class="staff-avatar av-purple">VR</div>
+      <div class="staff-info"><div class="staff-name">V.S. Rajeswari</div><div class="staff-role">VS</div><div class="staff-grade">Village Servant</div></div>
+    </div>
+    <div class="staff-card">
+      <div class="staff-avatar av-purple">MS</div>
+      <div class="staff-info"><div class="staff-name">M. Shanti Raju</div><div class="staff-role">VAA</div><div class="staff-grade">Village Agri. Assistant</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- NOTICES -->
+<div class="notices-section" id="notices">
+  <div class="section-title">Latest Notices</div>
+  <div class="section-sub">Official announcements and important updates for Damagatla</div>
+  <div class="notices-list">
+    <div class="notice-item">
+      <div class="notice-date">Apr<br>25<br>2025</div>
+      <div class="notice-text">
+        Thalliki Vandanam — disbursement of funds to eligible mothers begins this week <span class="notice-new">NEW</span>
+        <span>Beneficiaries registered under the scheme are requested to verify bank details at the Panchayat office</span>
+      </div>
+    </div>
+    <div class="notice-item">
+      <div class="notice-date">Apr<br>20<br>2025</div>
+      <div class="notice-text">
+        NTR Bharosa Pension — new applications accepted for elderly and widows <span class="notice-new">NEW</span>
+        <span>Eligible residents may submit Aadhaar, income certificate, and passbook copy to D. Madhu, Welfare Assistant</span>
+      </div>
+    </div>
+    <div class="notice-item">
+      <div class="notice-date">Apr<br>18<br>2025</div>
+      <div class="notice-text">
+        Gram Sabha meeting — 30th April 2025, 10:00 AM at Damagatla Panchayat Office
+        <span>Agenda: Village development plan review and CBN Vision Groups formation discussion</span>
+      </div>
+    </div>
+    <div class="notice-item">
+      <div class="notice-date">Apr<br>10<br>2025</div>
+      <div class="notice-text">
+        Post Metric Scholarships (MTF/RTF) — applications open for 2025–26 academic year
+        <span>SC/ST/BC/Minority students pursuing degree or diploma courses should apply through AP ePass portal by 31st May 2025</span>
+      </div>
+    </div>
+    <div class="notice-item">
+      <div class="notice-date">Apr<br>05<br>2025</div>
+      <div class="notice-text">
+        Auto Driver La Seva Lo — registration open for eligible auto drivers of Damagatla
+        <span>Applicants should bring vehicle RC, Aadhaar, driving licence, and bank passbook to the Panchayat office</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- GALLERY -->
+<div class="section" id="gallery">
+  <div class="section-title">Photo Gallery</div>
+  <div class="section-sub">Village development and community activities in Damagatla</div>
+  <div class="gallery-grid">
+    <div class="gallery-item">🏗️<div class="gallery-label">Road & drain works</div></div>
+    <div class="gallery-item">👩‍👧<div class="gallery-label">Thalliki Vandanam event</div></div>
+    <div class="gallery-item">🧓<div class="gallery-label">NTR Bharosa Pension camp</div></div>
+    <div class="gallery-item">🎓<div class="gallery-label">Scholarship awareness drive</div></div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div class="contact-section" id="contact">
+  <div class="section-title">Contact Us</div>
+  <div class="section-sub">Reach us for welfare services, scheme applications, or village information</div>
+  <div class="contact-grid">
+    <div class="contact-card">
+      <div class="contact-card-title">📍 Office Address</div>
+      <div class="contact-row"><div class="contact-label">Village</div><div class="contact-value">Damagatla</div></div>
+      <div class="contact-row"><div class="contact-label">Mandal</div><div class="contact-value">Nandikotkur</div></div>
+      <div class="contact-row"><div class="contact-label">District</div><div class="contact-value">Nandyal</div></div>
+      <div class="contact-row"><div class="contact-label">State</div><div class="contact-value">Andhra Pradesh</div></div>
+    </div>
+    <div class="contact-card">
+      <div class="contact-card-title">📞 Key Contacts</div>
+      <div class="contact-row"><div class="contact-label">Secretary</div><div class="contact-value">G. Mallikarjuna (Gr. V)</div></div>
+      <div class="contact-row"><div class="contact-label">Secretary</div><div class="contact-value">B. Naresh Achari (Gr. VI)</div></div>
+      <div class="contact-row"><div class="contact-label">Welfare</div><div class="contact-value">D. Madhu</div></div>
+      <div class="contact-row"><div class="contact-label">Timings</div><div class="contact-value">Mon–Sat, 10.30 AM – 500 PM</div></div>
+    </div>
+    <div class="contact-card">
+      <div class="contact-card-title">🔗 Useful Portals</div>
+      <div class="contact-row"><div class="contact-value" style="color:#6BAED6">• APSeva Services</div></div>
+      <div class="contact-row"><div class="contact-value" style="color:#6BAED6">• AP ePass Scholarships</div></div>
+      <div class="contact-row"><div class="contact-value" style="color:#6BAED6">• Meebhoomi Land Records</div></div>
+      <div class="contact-row"><div class="contact-value" style="color:#6BAED6">• NTR Bharosa Pension Portal</div></div>
+      <div class="contact-row"><div class="contact-value" style="color:#6BAED6">• Sachivalayam Services AP</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <div class="footer-telugu">స్వర్ణ గ్రామం స్వర్ణ వార్డు — దమగట్ల గ్రామ పంచాయతీ</div>
+  <div class="footer-top">© 2025 Swarna Gramam Swarna Ward, Damagatla Gram Panchayat &nbsp;|&nbsp; Nandikotkur Mandal, Nandyal District &nbsp;|&nbsp; Government of Andhra Pradesh</div>
+</div>
+
+<script>
+document.querySelectorAll('.nav a').forEach(link=>{
+  link.addEventListener('click',e=>{
+    e.preventDefault();
+    const id=link.getAttribute('href').slice(1);
+    document.getElementById(id)?.scrollIntoView({behavior:'smooth'});
+  });
+});
+</script>
+</body>
+</html>
