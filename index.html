@@ -33,6 +33,17 @@ body{font-family:'Petrona',Georgia,serif;background:var(--cream);color:var(--tex
 .nav a:hover{background:rgba(255,255,255,0.1);color:#FAF5E4;}
 .nav a:first-child{border-left:1px solid rgba(255,255,255,0.1);}
 
+/* Dropdown */
+.nav-dropdown{position:relative;display:inline-block;}
+.nav-dropdown>a{border-right:1px solid rgba(255,255,255,0.1);}
+.dropdown-menu{display:none;position:absolute;top:100%;left:0;background:#0F3D1A;min-width:210px;border:1px solid rgba(255,215,0,0.25);border-top:2px solid #FFD700;border-radius:0 0 8px 8px;box-shadow:0 8px 24px rgba(0,0,0,0.4);z-index:200;}
+.dropdown-menu a{display:block;color:#C8E6A0;text-decoration:none;padding:11px 18px;font-family:'Petrona',serif;font-size:13px;border-bottom:1px solid rgba(255,255,255,0.07);transition:all 0.2s;border-right:none;}
+.dropdown-menu a:last-child{border-bottom:none;border-radius:0 0 8px 8px;}
+.dropdown-menu a:hover{background:rgba(255,215,0,0.12);color:#FFD700;padding-left:24px;}
+.dropdown-menu a .dept-icon{margin-right:8px;}
+.nav-dropdown:hover .dropdown-menu{display:block;}
+.nav-dropdown>a::after{content:' ▾';font-size:10px;opacity:0.7;}
+
 .hero{background:linear-gradient(180deg,#F0E6C8 0%,#FAF5E4 100%);padding:28px 40px;display:flex;align-items:center;gap:32px;position:relative;overflow:hidden;}
 .hero::before{content:'';position:absolute;right:-60px;top:-40px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(0,63,135,0.06) 0%,transparent 70%);}
 .hero-text{flex:1}
@@ -73,6 +84,11 @@ body{font-family:'Petrona',Georgia,serif;background:var(--cream);color:var(--tex
 .scheme-desc{font-size:13px;color:#A8C8FF;line-height:1.6;}
 .scheme-tag{display:inline-block;margin-top:10px;font-size:11px;background:rgba(255,215,0,0.2);color:#FFD700;padding:3px 10px;border-radius:4px;border:0.5px solid rgba(255,215,0,0.4);}
 .scheme-tag.orange{background:rgba(255,152,0,0.2);color:#FFB74D;border-color:rgba(255,152,0,0.4);}
+.scheme-tag.dept-tag{background:rgba(26,92,42,0.3);color:#A8E6B8;border-color:rgba(26,92,42,0.5);}
+
+.dept-filter-bar{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px;}
+.dept-btn{background:rgba(255,255,255,0.07);border:1px solid rgba(255,215,0,0.3);color:#C8E6A0;padding:8px 16px;border-radius:20px;font-family:'Petrona',serif;font-size:12px;cursor:pointer;transition:all 0.2s;}
+.dept-btn:hover{background:rgba(255,215,0,0.15);color:#FFD700;border-color:#FFD700;}
 .upcoming-badge{display:inline-block;font-size:10px;background:#FF9800;color:#fff;padding:2px 8px;border-radius:3px;margin-bottom:8px;font-family:'Petrona',serif;letter-spacing:0.5px;}
 
 /* STAFF */
@@ -125,6 +141,56 @@ body{font-family:'Petrona',Georgia,serif;background:var(--cream);color:var(--tex
 .footer{background:#001130;padding:18px 40px;text-align:center;font-size:12px;color:#4A6A9A;font-family:'Petrona',serif;}
 .footer-telugu{font-family:'Noto Serif Telugu',serif;color:#FFD700;font-size:13px;margin-bottom:6px;}
 .footer-top{border-top:1px solid #1A3060;padding-top:14px;color:#4A6A9A;}
+.nav-dropdown {
+  position: relative;
+  display: flex;
+}
+
+.nav-dropdown .nav-link {
+  color: #C8E6A0;
+  text-decoration: none;
+  padding: 12px 18px;
+  font-family: 'Petrona', serif;
+  font-size: 13px;
+  border-right: 1px solid rgba(255,255,255,0.1);
+  transition: all 0.2s;
+  display: inline-block;
+}
+
+.nav-dropdown .nav-link:hover {
+  background: rgba(255,255,255,0.1);
+  color: #FAF5E4;
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #1A5C2A;
+  min-width: 220px;
+  border-radius: 6px;
+  overflow: hidden;
+  z-index: 999;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 10px 14px;
+  color: #C8E6A0;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.dropdown-menu a:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+/* Show dropdown on hover */
+.nav-dropdown:hover .dropdown-menu {
+  display: block;
+}
 </style>
 </head>
 <body>
@@ -151,7 +217,15 @@ body{font-family:'Petrona',Georgia,serif;background:var(--cream);color:var(--tex
 <nav class="nav">
   <a href="#home">🏠 Home</a>
   <a href="#about">About</a>
-  <a href="#schemes">Schemes</a>
+  <div class="nav-dropdown">
+    <a href="#schemes" id="schemes-nav-all">Schemes</a>
+    <div class="dropdown-menu">
+      <a href="#schemes" onclick="filterSchemes('welfare')"><span class="dept-icon">🤝</span>Welfare Department</a>
+      <a href="#schemes" onclick="filterSchemes('health')"><span class="dept-icon">🏥</span>Health Department</a>
+      <a href="#schemes" onclick="filterSchemes('veterinary')"><span class="dept-icon">🐄</span>Veterinary Department</a>
+      <a href="#schemes" onclick="filterSchemes('agriculture')"><span class="dept-icon">🌾</span>Agriculture Department</a>
+    </div>
+  </div>
   <a href="#staff">Staff</a>
   <a href="#notices">Notices</a>
   <a href="#gallery">Gallery</a>
@@ -188,64 +262,150 @@ body{font-family:'Petrona',Georgia,serif;background:var(--cream);color:var(--tex
   <div class="section-title">Government Schemes</div>
   <div class="section-sub">Welfare programmes implemented in Damagatla under AP Government</div>
 
+  <!-- Department Filter Bar -->
+  <div class="dept-filter-bar" id="dept-filter-bar">
+    <button class="dept-btn active" onclick="filterSchemes('all')">📋 All Schemes</button>
+    <button class="dept-btn" onclick="filterSchemes('welfare')">🤝 Welfare Department</button>
+    <button class="dept-btn" onclick="filterSchemes('health')">🏥 Health Department</button>
+    <button class="dept-btn" onclick="filterSchemes('veterinary')">🐄 Veterinary Department</button>
+    <button class="dept-btn" onclick="filterSchemes('agriculture')">🌾 Agriculture Department</button>
+  </div>
+
+  <!-- Department Heading (shown when filtered) -->
+  <div id="dept-heading" style="display:none;margin-bottom:18px;">
+    <div id="dept-heading-text" style="font-family:'Tiro Telugu',serif;font-size:18px;color:#FFD700;padding:12px 18px;background:rgba(255,215,0,0.08);border-left:4px solid #FFD700;border-radius:4px;"></div>
+  </div>
+
+  <!-- No results message -->
+  <div id="no-schemes-msg" style="display:none;text-align:center;padding:40px 20px;color:#6BAED6;font-size:15px;">
+    <div style="font-size:36px;margin-bottom:12px;">🔍</div>
+    No schemes currently listed for this department.<br>
+    <span style="font-size:12px;opacity:0.7;">Check back soon for updates.</span>
+  </div>
+
   <!-- Active Schemes -->
   <div class="schemes-group-label">Active Schemes</div>
   <div class="schemes-grid">
-    <div class="scheme-card">
+    <div class="scheme-card" data-dept="welfare">
       <div class="scheme-icon">👩‍👧</div>
       <div class="scheme-name">Thalliki Vandanam</div>
       <div class="scheme-telugu">తల్లికి వందనం</div>
       <div class="scheme-desc">Financial assistance provided to mothers on Children's Day to support child nutrition, education, and overall family well-being.</div>
       <span class="scheme-tag">Women & Child</span>
+      <span class="scheme-tag dept-tag">🤝 Welfare</span>
     </div>
-    <div class="scheme-card">
+    <div class="scheme-card" data-dept="welfare">
       <div class="scheme-icon">🛺</div>
       <div class="scheme-name">Auto Driver La Seva Lo</div>
       <div class="scheme-telugu">ఆటో డ్రైవర్ల సేవలో</div>
       <div class="scheme-desc">Financial support and recognition for auto drivers serving rural communities, covering fuel costs, insurance, and vehicle maintenance assistance.</div>
       <span class="scheme-tag">Transport Workers</span>
+      <span class="scheme-tag dept-tag">🤝 Welfare</span>
     </div>
-    <div class="scheme-card">
+    <div class="scheme-card" data-dept="agriculture">
       <div class="scheme-icon">🌾</div>
       <div class="scheme-name">Annadatha Sukhibava</div>
       <div class="scheme-telugu">అన్నదాత సుఖీభవ</div>
       <div class="scheme-desc">Crop investment support and insurance for farmers to ensure financial security during crop loss due to natural calamities or market volatility.</div>
       <span class="scheme-tag">Agriculture</span>
+      <span class="scheme-tag dept-tag">🌾 Agriculture</span>
     </div>
-    <div class="scheme-card">
+    <div class="scheme-card" data-dept="welfare">
       <div class="scheme-icon">🧓</div>
       <div class="scheme-name">NTR Bharosa Pension</div>
       <div class="scheme-telugu">ఎన్టీఆర్ భరోసా పెన్షన్</div>
       <div class="scheme-desc">Monthly financial pension assistance of ₹3,000 to elderly, widows, differently-abled persons, weavers, and toddy workers in need of social security.</div>
       <span class="scheme-tag">Social Security</span>
+      <span class="scheme-tag dept-tag">🤝 Welfare</span>
     </div>
-    <div class="scheme-card">
+    <div class="scheme-card" data-dept="welfare">
       <div class="scheme-icon">🎓</div>
       <div class="scheme-name">Post Metric Scholarships</div>
       <div class="scheme-telugu">పోస్ట్ మెట్రిక్ స్కాలర్షిప్</div>
       <div class="scheme-desc">Scholarships under MTF (Merit cum Means) and RTF (Reimbursement of Tuition Fee) for SC/ST/BC/Minority students pursuing higher education beyond Class 10.</div>
       <span class="scheme-tag">MTF / RTF · Education</span>
+      <span class="scheme-tag dept-tag">🤝 Welfare</span>
+    </div>
+  </div>
+
+  <!-- Health Schemes -->
+  <div class="schemes-group-label" id="group-health">Health Department Schemes</div>
+  <div class="schemes-grid" id="grid-health">
+    <div class="scheme-card" data-dept="health">
+      <div class="scheme-icon">🤰</div>
+      <div class="scheme-name">YSR Aarogyasri</div>
+      <div class="scheme-telugu">వైఎస్ఆర్ ఆరోగ్యశ్రీ</div>
+      <div class="scheme-desc">Free health coverage up to ₹5 lakh per year for BPL families, covering critical illnesses, surgeries, and hospitalisation at empanelled hospitals.</div>
+      <span class="scheme-tag">Health Insurance</span>
+      <span class="scheme-tag dept-tag">🏥 Health</span>
+    </div>
+    <div class="scheme-card" data-dept="health">
+      <div class="scheme-icon">👶</div>
+      <div class="scheme-name">Janani Suraksha Yojana</div>
+      <div class="scheme-telugu">జననీ సురక్షా యోజన</div>
+      <div class="scheme-desc">Financial assistance to pregnant women for institutional deliveries to reduce maternal and infant mortality rates among BPL families.</div>
+      <span class="scheme-tag">Maternal Health</span>
+      <span class="scheme-tag dept-tag">🏥 Health</span>
+    </div>
+    <div class="scheme-card" data-dept="health">
+      <div class="scheme-icon">💉</div>
+      <div class="scheme-name">National Immunization Programme</div>
+      <div class="scheme-telugu">జాతీయ టీకా కార్యక్రమం</div>
+      <div class="scheme-desc">Free vaccination for children and pregnant women against preventable diseases, conducted through ANM and ASHA workers at village level.</div>
+      <span class="scheme-tag">Child Health</span>
+      <span class="scheme-tag dept-tag">🏥 Health</span>
+    </div>
+  </div>
+
+  <!-- Veterinary Schemes -->
+  <div class="schemes-group-label" id="group-veterinary">Veterinary Department Schemes</div>
+  <div class="schemes-grid" id="grid-veterinary">
+    <div class="scheme-card" data-dept="veterinary">
+      <div class="scheme-icon">🐄</div>
+      <div class="scheme-name">YSR Pashu Bima</div>
+      <div class="scheme-telugu">వైఎస్ఆర్ పశు బీమా</div>
+      <div class="scheme-desc">Free insurance coverage for livestock owned by small and marginal farmers, protecting against accidental death of cattle, sheep, and goats.</div>
+      <span class="scheme-tag">Livestock Insurance</span>
+      <span class="scheme-tag dept-tag">🐄 Veterinary</span>
+    </div>
+    <div class="scheme-card" data-dept="veterinary">
+      <div class="scheme-icon">🐓</div>
+      <div class="scheme-name">Backyard Poultry Scheme</div>
+      <div class="scheme-telugu">వెనుకటి పశుపోషణ పథకం</div>
+      <div class="scheme-desc">Distribution of chicks and feed support to BPL families for poultry rearing to augment rural household income through backyard poultry farming.</div>
+      <span class="scheme-tag">Poultry</span>
+      <span class="scheme-tag dept-tag">🐄 Veterinary</span>
+    </div>
+    <div class="scheme-card" data-dept="veterinary">
+      <div class="scheme-icon">🏥</div>
+      <div class="scheme-name">Mobile Veterinary Clinics</div>
+      <div class="scheme-telugu">మొబైల్ పశు వైద్యం</div>
+      <div class="scheme-desc">Doorstep veterinary services including treatment, artificial insemination, and vaccination camps for livestock at village level through mobile units.</div>
+      <span class="scheme-tag">Animal Healthcare</span>
+      <span class="scheme-tag dept-tag">🐄 Veterinary</span>
     </div>
   </div>
 
   <!-- Upcoming Schemes -->
   <div class="schemes-group-label" style="color:#FFB74D;border-color:rgba(255,152,0,0.3);">Upcoming Schemes — CBN Vision Groups</div>
   <div class="schemes-grid-2">
-    <div class="scheme-card upcoming">
+    <div class="scheme-card upcoming" data-dept="welfare">
       <div class="upcoming-badge">UPCOMING</div>
       <div class="scheme-icon">👥</div>
       <div class="scheme-name">CBN Vision Groups</div>
       <div class="scheme-telugu">సీబీఎన్ విజన్ గ్రూప్స్</div>
       <div class="scheme-desc">Community-level groups to be formed under the vision of CM N. Chandrababu Naidu, focusing on village-level planning, self-employment, skill development, and collective economic progress for rural households.</div>
       <span class="scheme-tag orange">Village Groups</span>
+      <span class="scheme-tag dept-tag">🤝 Welfare</span>
     </div>
-    <div class="scheme-card upcoming">
+    <div class="scheme-card upcoming" data-dept="agriculture">
       <div class="upcoming-badge">UPCOMING</div>
       <div class="scheme-icon">🌱</div>
       <div class="scheme-name">CBN Vision — Rural Livelihood</div>
       <div class="scheme-telugu">గ్రామీణ జీవనోపాధి</div>
       <div class="scheme-desc">Planned extension of CBN Vision Groups focusing on micro-enterprise formation, SHG linkage, and financial literacy for women and youth groups in Damagatla village.</div>
       <span class="scheme-tag orange">Livelihoods</span>
+      <span class="scheme-tag dept-tag">🌾 Agriculture</span>
     </div>
   </div>
 </div>
@@ -395,13 +555,84 @@ body{font-family:'Petrona',Georgia,serif;background:var(--cream);color:var(--tex
 </div>
 
 <script>
-document.querySelectorAll('.nav a').forEach(link=>{
+document.querySelectorAll('.nav a:not(.dept-dropdown-item)').forEach(link=>{
+  if(link.closest('.nav-dropdown') && link===link.closest('.nav-dropdown').querySelector('a')) return;
   link.addEventListener('click',e=>{
     e.preventDefault();
     const id=link.getAttribute('href').slice(1);
     document.getElementById(id)?.scrollIntoView({behavior:'smooth'});
   });
 });
+
+// Smooth scroll for dropdown scheme links
+document.querySelectorAll('.dropdown-menu a').forEach(link=>{
+  link.addEventListener('click',e=>{
+    e.preventDefault();
+    document.getElementById('schemes')?.scrollIntoView({behavior:'smooth'});
+  });
+});
+
+// Smooth scroll for main schemes nav link
+document.getElementById('schemes-nav-all')?.addEventListener('click',e=>{
+  e.preventDefault();
+  filterSchemes('all');
+  document.getElementById('schemes')?.scrollIntoView({behavior:'smooth'});
+});
+
+const deptNames = {
+  welfare: '🤝 Welfare Department Schemes',
+  health: '🏥 Health Department Schemes',
+  veterinary: '🐄 Veterinary Department Schemes',
+  agriculture: '🌾 Agriculture Department Schemes',
+  all: ''
+};
+
+function filterSchemes(dept) {
+  const allCards = document.querySelectorAll('.scheme-card');
+  const groupLabels = document.querySelectorAll('.schemes-group-label');
+  const grids = document.querySelectorAll('.schemes-grid, .schemes-grid-2');
+  const heading = document.getElementById('dept-heading');
+  const headingText = document.getElementById('dept-heading-text');
+  const noMsg = document.getElementById('no-schemes-msg');
+
+  // Update active button
+  document.querySelectorAll('.dept-btn').forEach(btn => btn.classList.remove('active'));
+  document.querySelectorAll('.dept-btn').forEach(btn => {
+    if(btn.textContent.toLowerCase().includes(dept) || (dept==='all' && btn.textContent.includes('All')))
+      btn.classList.add('active');
+  });
+
+  if(dept === 'all') {
+    allCards.forEach(c => c.style.display = '');
+    groupLabels.forEach(l => l.style.display = '');
+    grids.forEach(g => g.style.display = '');
+    heading.style.display = 'none';
+    noMsg.style.display = 'none';
+    return;
+  }
+
+  // Hide all group labels and grids first
+  groupLabels.forEach(l => l.style.display = 'none');
+  grids.forEach(g => g.style.display = 'none');
+
+  // Show/hide cards
+  let visibleCount = 0;
+  allCards.forEach(card => {
+    if(card.dataset.dept === dept) {
+      card.style.display = '';
+      visibleCount++;
+      // Show parent grid
+      card.closest('.schemes-grid, .schemes-grid-2').style.display = '';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+
+  // Show dept heading
+  heading.style.display = 'block';
+  headingText.textContent = deptNames[dept] || dept;
+  noMsg.style.display = visibleCount === 0 ? 'block' : 'none';
+}
 </script>
 </body>
 </html>
