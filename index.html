@@ -761,7 +761,7 @@ async function sendMessage() {
       })
     });
     const data = await response.json();
-    const reply = data.content?.map(b => b.text || '').join('') || 'Sorry, I could not get a response. Please visit the Panchayat Office during working hours.';
+    const reply = data.content?.map(b => b.text || '').join('') || 'Sorry, I could not get a response. Please visit the Damagatla Swarna Gramam Office during working hours.';
     removeTyping();
     appendMessage('bot', reply);
     chatHistory.push({ role: 'assistant', content: reply });
