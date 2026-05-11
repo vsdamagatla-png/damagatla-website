@@ -351,6 +351,134 @@ body{font-family:'Petrona',Georgia,serif;background:var(--cream);color:var(--tex
 .pp-edu-degree{font-family:'Petrona',serif;font-size:13px;color:#FAF5E4;font-weight:600;margin-bottom:3px;}
 .pp-edu-inst{font-size:12px;color:#A8C8FF;margin-bottom:2px;}
 .pp-edu-year{font-size:11px;color:#6BAED6;}
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE — TABLET & MOBILE
+   ═══════════════════════════════════════════ */
+
+/* ── Hamburger button (mobile only) ── */
+#nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:10px 14px;flex-direction:column;gap:5px;flex-shrink:0;}
+.nav-mobile-bar{display:none;}
+.nav-mobile-logo{display:none;}
+.nav-links{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;}
+.nav-links a,.nav-links .nav-dropdown>a{color:#C8E6A0;text-decoration:none;padding:12px 18px;font-family:'Petrona',serif;font-size:13px;border-right:1px solid rgba(255,255,255,0.1);transition:all 0.2s;display:inline-block;}
+.nav-links a:hover{background:rgba(255,255,255,0.1);color:#FAF5E4;}
+#nav-toggle span{display:block;width:22px;height:2px;background:#C8E6A0;border-radius:2px;transition:all 0.3s;}
+#nav-toggle.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
+#nav-toggle.open span:nth-child(2){opacity:0;}
+#nav-toggle.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);}
+
+/* ── TABLET (≤900px) ── */
+@media(max-width:900px){
+  .header-inner{grid-template-columns:80px 1fr 80px;padding:16px 20px;gap:12px;}
+  .header-title{font-size:22px;}
+  .emblem{width:68px;height:68px;}
+
+  .nav{flex-wrap:wrap;}
+  .nav a,.nav-dropdown>a,.nav-dropdown .nav-link{padding:10px 12px;font-size:12px;}
+
+  .hero{padding:20px;flex-direction:column;align-items:flex-start;gap:20px;}
+  .hero-stats{width:100%;justify-content:flex-start;flex-wrap:wrap;}
+  .stat-card{min-width:80px;}
+
+  .section,.schemes-section,.staff-section,.notices-section,.contact-section{padding:24px 20px;}
+
+  .about-grid{grid-template-columns:1fr;}
+  .schemes-grid{grid-template-columns:repeat(2,1fr);}
+  .schemes-grid-2{grid-template-columns:1fr;}
+  .staff-grid-top{grid-template-columns:1fr;}
+  .staff-grid-mid{grid-template-columns:repeat(2,1fr);}
+  .staff-grid-bot{grid-template-columns:repeat(2,1fr);}
+  .contact-grid{grid-template-columns:1fr;}
+  .gallery-grid{grid-template-columns:repeat(2,1fr);}
+
+  #login-panel{width:360px;}
+  #profile-panel{width:360px;}
+}
+
+/* ── MOBILE (≤600px) ── */
+@media(max-width:600px){
+  /* Header */
+  .header-inner{grid-template-columns:56px 1fr;padding:12px 14px;gap:10px;}
+  .right-emblem{display:none;}
+  .emblem{width:52px;height:52px;}
+  .header-ap{font-size:11px;letter-spacing:1px;}
+  .header-title{font-size:17px;}
+  .header-subtitle{font-size:11px;}
+  .header-meta{font-size:10px;}
+
+  /* Nav — collapsible */
+  .nav{flex-direction:column;align-items:stretch;padding:0;}
+  .nav-mobile-bar{display:flex !important;align-items:center;justify-content:space-between;padding:0 4px;background:#1A5C2A;}
+  .nav-mobile-logo{display:block !important;color:#FFD700;font-family:'Petrona',serif;font-size:13px;font-weight:600;padding:10px 14px;}
+  #nav-toggle{display:flex;}
+  .nav-links{display:none;flex-direction:column;width:100%;border-top:1px solid rgba(255,255,255,0.1);}
+  .nav-links.open{display:flex;}
+  .nav-links a,.nav-links .nav-dropdown>a{padding:12px 16px;border-right:none;border-bottom:1px solid rgba(255,255,255,0.07);font-size:13px;display:block;width:100%;}
+
+  /* Dropdown inside mobile nav */
+  .nav-dropdown{position:static;display:block;}
+  .nav-dropdown .dropdown-menu{position:static;display:none;box-shadow:none;border:none;border-top:1px solid rgba(255,215,0,0.15);border-radius:0;background:rgba(0,0,0,0.2);min-width:unset;}
+  .nav-dropdown.open .dropdown-menu{display:block;}
+  .nav-dropdown>a::after{float:right;}
+  .nav-dropdown .dropdown-menu a{padding-left:28px;}
+
+  /* Employee login tab in mobile nav */
+  #emp-login-btn{margin-left:0 !important;border-left:none !important;border-top:2px solid rgba(255,215,0,0.4) !important;}
+
+  /* Hero */
+  .hero{padding:16px 14px;gap:16px;}
+  .hero-title{font-size:18px;}
+  .hero-desc{font-size:13px;}
+  .hero-stats{gap:10px;}
+  .stat-card{padding:10px 12px;min-width:72px;}
+  .stat-num{font-size:20px;}
+
+  /* Sections */
+  .section,.schemes-section,.staff-section,.notices-section,.contact-section{padding:18px 14px;}
+  .section-title{font-size:18px;}
+
+  /* About */
+  .about-grid{grid-template-columns:1fr;}
+
+  /* Schemes */
+  .schemes-grid,.schemes-grid-2{grid-template-columns:1fr;}
+
+  /* Staff */
+  .staff-grid-top,.staff-grid-mid,.staff-grid-bot{grid-template-columns:1fr;}
+  .staff-card{padding:12px;}
+  .staff-avatar{width:44px;height:44px;font-size:13px;}
+
+  /* Notices */
+  .notice-item{flex-direction:column;gap:8px;}
+  .notice-date{align-self:flex-start;display:flex;gap:6px;padding:4px 10px;}
+
+  /* Gallery */
+  .gallery-grid{grid-template-columns:repeat(2,1fr);gap:8px;}
+
+  /* Contact */
+  .contact-grid{grid-template-columns:1fr;}
+
+  /* Footer */
+  .footer{padding:14px;}
+
+  /* Chat FAB position */
+  #chat-fab{bottom:16px;right:14px;width:50px;height:50px;font-size:22px;}
+  #chat-window{right:10px;width:calc(100vw - 20px);max-height:72vh;}
+
+  /* Login panel */
+  #login-panel{width:100%;right:-100% !important;}
+  #login-panel.open{right:0 !important;}
+  .lp-body{padding:18px 16px;}
+  .lp-hero{padding:22px 18px 18px;}
+
+  /* Profile panel */
+  #profile-panel{width:100%;right:-100% !important;}
+  #profile-panel.open{right:0 !important;}
+  .pp-hero{padding:24px 16px 18px;}
+  .pp-body{padding:16px;}
+}
+
 </style>
 </head>
 <body>
@@ -375,22 +503,32 @@ body{font-family:'Petrona',Georgia,serif;background:var(--cream);color:var(--tex
 <div class="header-border-bottom"></div>
 
 <nav class="nav">
-  <a href="#home">🏠 Home</a>
-  <a href="#about">About</a>
-  <div class="nav-dropdown">
-    <a href="#schemes" id="schemes-nav-all">Schemes</a>
-    <div class="dropdown-menu">
-      <a href="#schemes" onclick="filterSchemes('welfare')"><span class="dept-icon">🤝</span>Welfare Department</a>
-      <a href="#schemes" onclick="filterSchemes('health')"><span class="dept-icon">🏥</span>Health Department</a>
-      <a href="#schemes" onclick="filterSchemes('veterinary')"><span class="dept-icon">🐄</span>Veterinary Department</a>
-      <a href="#schemes" onclick="filterSchemes('agriculture')"><span class="dept-icon">🌾</span>Agriculture Department</a>
-    </div>
+  <!-- Mobile bar: logo text + hamburger -->
+  <div class="nav-mobile-bar">
+    <span class="nav-mobile-logo">🏛️ Damagatla SGSW</span>
+    <button id="nav-toggle" onclick="toggleMobileNav()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
-  <a href="#staff">Staff</a>
-  <a href="#notices">Notices</a>
-  <a href="#gallery">Gallery</a>
-  <a href="#contact">Contact</a>
-  <a href="#" onclick="toggleLoginPanel(event)" id="emp-login-btn" style="margin-left:auto;background:rgba(255,215,0,0.15);color:#FFD700;border-left:1px solid rgba(255,215,0,0.3);font-weight:600;letter-spacing:0.3px;">🔐 Employee Login</a>
+  <!-- Nav links (collapsible on mobile) -->
+  <div class="nav-links" id="nav-links">
+    <a href="#home" onclick="closeMobileNav()">🏠 Home</a>
+    <a href="#about" onclick="closeMobileNav()">About</a>
+    <div class="nav-dropdown" id="schemes-dropdown">
+      <a href="#schemes" id="schemes-nav-all" onclick="handleSchemesClick(event)">Schemes</a>
+      <div class="dropdown-menu">
+        <a href="#schemes" onclick="filterSchemes('welfare');closeMobileNav()"><span class="dept-icon">🤝</span>Welfare Department</a>
+        <a href="#schemes" onclick="filterSchemes('health');closeMobileNav()"><span class="dept-icon">🏥</span>Health Department</a>
+        <a href="#schemes" onclick="filterSchemes('veterinary');closeMobileNav()"><span class="dept-icon">🐄</span>Veterinary Department</a>
+        <a href="#schemes" onclick="filterSchemes('agriculture');closeMobileNav()"><span class="dept-icon">🌾</span>Agriculture Department</a>
+      </div>
+    </div>
+    <a href="#staff" onclick="closeMobileNav()">Staff</a>
+    <a href="#notices" onclick="closeMobileNav()">Notices</a>
+    <a href="#gallery" onclick="closeMobileNav()">Gallery</a>
+    <a href="#contact" onclick="closeMobileNav()">Contact</a>
+    <a href="#" onclick="toggleLoginPanel(event);closeMobileNav()" id="emp-login-btn" style="margin-left:auto;background:rgba(255,215,0,0.15);color:#FFD700;border-left:1px solid rgba(255,215,0,0.3);font-weight:600;letter-spacing:0.3px;">🔐 Employee Login</a>
+  </div>
 </nav>
 
 <div class="hero" id="home">
@@ -1241,6 +1379,42 @@ function closeProfile() {
 document.getElementById && document.addEventListener('DOMContentLoaded', function(){
   var panel = document.getElementById('profile-panel');
   if(panel) panel.addEventListener('click', function(e){ e.stopPropagation(); });
+});
+</script>
+
+
+<script>
+// ── MOBILE NAV ──
+function toggleMobileNav(){
+  var links = document.getElementById('nav-links');
+  var btn   = document.getElementById('nav-toggle');
+  links.classList.toggle('open');
+  btn.classList.toggle('open');
+}
+function closeMobileNav(){
+  var links = document.getElementById('nav-links');
+  var btn   = document.getElementById('nav-toggle');
+  links.classList.remove('open');
+  btn.classList.remove('open');
+}
+function handleSchemesClick(e){
+  // On mobile: toggle dropdown; on desktop: scroll to schemes
+  if(window.innerWidth <= 600){
+    e.preventDefault();
+    document.getElementById('schemes-dropdown').classList.toggle('open');
+  } else {
+    closeMobileNav();
+    e.preventDefault();
+    filterSchemes('all');
+    document.getElementById('schemes')?.scrollIntoView({behavior:'smooth'});
+  }
+}
+// Close nav when clicking outside
+document.addEventListener('click', function(e){
+  var nav = document.querySelector('.nav');
+  if(nav && !nav.contains(e.target)){
+    closeMobileNav();
+  }
 });
 </script>
 
