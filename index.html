@@ -91,6 +91,68 @@ body{font-family:'Petrona',Georgia,serif;background:var(--cream);color:var(--tex
 .dept-btn:hover{background:rgba(255,215,0,0.15);color:#FFD700;border-color:#FFD700;}
 .upcoming-badge{display:inline-block;font-size:10px;background:#FF9800;color:#fff;padding:2px 8px;border-radius:3px;margin-bottom:8px;font-family:'Petrona',serif;letter-spacing:0.5px;}
 
+/* SURVEYS */
+.surveys-section{background:linear-gradient(180deg,#F0F7F0 0%,#E8F5E9 100%);padding:36px 40px;border-top:4px solid #1A5C2A;}
+.surveys-section .section-title{color:#1A5C2A;}
+.surveys-section .section-title::after{background:linear-gradient(90deg,#1A5C2A,transparent);}
+.surveys-section .section-sub{color:#2E7D44;}
+.surveys-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.survey-card{background:#fff;border:0.5px solid #A5D6A7;border-top:4px solid #1A5C2A;border-radius:10px;padding:20px;position:relative;overflow:hidden;transition:box-shadow 0.2s,transform 0.2s;}
+.survey-card:hover{box-shadow:0 6px 24px rgba(26,92,42,0.15);transform:translateY(-2px);}
+.survey-card::before{content:'';position:absolute;top:0;right:0;width:80px;height:80px;background:radial-gradient(circle,rgba(26,92,42,0.06) 0%,transparent 70%);}
+.survey-pulse{display:inline-flex;align-items:center;gap:6px;font-size:10px;font-family:'Petrona',serif;font-weight:600;letter-spacing:0.8px;background:#E8F5E9;color:#1A5C2A;border:1px solid #A5D6A7;padding:3px 10px;border-radius:20px;margin-bottom:12px;}
+.survey-pulse::before{content:'';width:7px;height:7px;border-radius:50%;background:#1A5C2A;animation:surveyPulse 1.4s ease-in-out infinite;}
+@keyframes surveyPulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.4;transform:scale(1.3);}}
+.survey-icon{font-size:30px;margin-bottom:10px;}
+.survey-name{font-family:'Tiro Telugu',serif;font-size:16px;color:#1A3A22;margin-bottom:4px;}
+.survey-telugu{font-family:'Noto Serif Telugu',serif;font-size:12px;color:#2E7D44;margin-bottom:8px;}
+.survey-desc{font-size:13px;color:#4A5C4A;line-height:1.7;}
+.survey-meta{margin-top:12px;padding-top:10px;border-top:1px dashed #C8E6C9;display:flex;flex-wrap:wrap;gap:6px;}
+.survey-tag{font-size:11px;background:#E8F5E9;color:#1A5C2A;border:0.5px solid #A5D6A7;padding:3px 9px;border-radius:4px;font-family:'Petrona',serif;}
+.survey-tag.blue{background:#E3F0FF;color:#003F87;border-color:#90B8E8;}
+.survey-tag.orange{background:#FFF3E0;color:#E65100;border-color:#FFCC80;}
+
+/* STAFF RESOURCES */
+.resources-section{background:#0D2137;padding:36px 40px;border-top:4px solid #FFD700;}
+.resources-section .section-title{color:#FFD700;font-size:20px;}
+.resources-section .section-title::after{background:linear-gradient(90deg,#FFD700,transparent);}
+.resources-section .section-sub{color:#90CAF9;margin-bottom:28px;}
+.res-survey-block{margin-bottom:36px;}
+.res-survey-heading{display:flex;align-items:center;gap:12px;padding:12px 18px;border-radius:8px;margin-bottom:18px;}
+.res-survey-heading.green{background:rgba(26,92,42,0.3);border-left:4px solid #4CAF50;}
+.res-survey-heading.blue{background:rgba(0,63,135,0.3);border-left:4px solid #42A5F5;}
+.res-survey-heading.amber{background:rgba(255,152,0,0.2);border-left:4px solid #FFA726;}
+.res-survey-heading-icon{font-size:26px;}
+.res-survey-heading-text{}
+.res-survey-heading-title{font-family:'Tiro Telugu',serif;font-size:16px;color:#FAF5E4;margin-bottom:2px;}
+.res-survey-heading-sub{font-size:12px;color:#90CAF9;}
+.res-cards-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+.res-cards-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+.res-card{background:rgba(255,255,255,0.06);border:0.5px solid rgba(255,255,255,0.12);border-radius:8px;padding:14px;display:flex;flex-direction:column;gap:8px;transition:background 0.2s;}
+.res-card:hover{background:rgba(255,255,255,0.10);}
+.res-card-icon{font-size:22px;}
+.res-card-title{font-family:'Petrona',serif;font-size:13px;font-weight:600;color:#E3F2FD;line-height:1.3;}
+.res-card-desc{font-size:11px;color:#90CAF9;line-height:1.5;flex:1;}
+.res-card-actions{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px;}
+.res-btn{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-family:'Petrona',serif;padding:5px 10px;border-radius:5px;text-decoration:none;transition:opacity 0.2s;font-weight:600;}
+.res-btn:hover{opacity:0.85;}
+.res-btn.green{background:#1B5E20;color:#A5D6A7;border:1px solid #4CAF50;}
+.res-btn.blue{background:#0D47A1;color:#90CAF9;border:1px solid #42A5F5;}
+.res-btn.amber{background:#E65100;color:#FFE0B2;border:1px solid #FFA726;}
+.res-btn.teal{background:#004D40;color:#80CBC4;border:1px solid #26A69A;}
+.res-btn.purple{background:#4A148C;color:#CE93D8;border:1px solid #AB47BC;}
+.res-btn.gold{background:#4A3000;color:#FFD700;border:1px solid #FFD700;}
+.res-steps-box{background:rgba(255,255,255,0.04);border:0.5px solid rgba(255,255,255,0.10);border-radius:8px;padding:16px;margin-top:14px;}
+.res-steps-title{font-size:12px;color:#FFD700;font-family:'Petrona',serif;font-weight:600;letter-spacing:0.5px;margin-bottom:10px;}
+.res-steps{display:flex;flex-wrap:wrap;gap:0;}
+.res-step{display:flex;align-items:flex-start;gap:8px;padding:6px 10px;flex:1;min-width:140px;}
+.res-step-num{width:20px;height:20px;border-radius:50%;background:#FFD700;color:#001E52;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;font-family:'Petrona',serif;}
+.res-step-text{font-size:11px;color:#B0BEC5;line-height:1.5;}
+.res-divider{height:1px;background:rgba(255,255,255,0.08);margin:28px 0;}
+.res-notice{display:flex;align-items:flex-start;gap:10px;background:rgba(255,152,0,0.12);border:1px solid rgba(255,152,0,0.3);border-radius:6px;padding:10px 14px;margin-top:12px;}
+.res-notice-icon{font-size:16px;flex-shrink:0;margin-top:1px;}
+.res-notice-text{font-size:12px;color:#FFE0B2;line-height:1.6;}
+
 /* STAFF */
 .staff-section{background:#F5F0E4;padding:36px 40px;}
 .staff-section .section-title{color:var(--soil);}
@@ -521,6 +583,8 @@ body{font-family:'Petrona',Georgia,serif;background:var(--cream);color:var(--tex
         <a href="#schemes" onclick="filterSchemes('agriculture');closeMobileNav()"><span class="dept-icon">🌾</span>Agriculture Department</a>
       </div>
     </div>
+    <a href="#surveys" onclick="closeMobileNav()">Surveys</a>
+    <a href="#resources" onclick="closeMobileNav()">📚 Resources</a>
     <a href="#staff" onclick="closeMobileNav()">Staff</a>
     <a href="#notices" onclick="closeMobileNav()">Notices</a>
     <a href="#gallery" onclick="closeMobileNav()">Gallery</a>
@@ -716,6 +780,367 @@ body{font-family:'Petrona',Georgia,serif;background:var(--cream);color:var(--tex
       <span class="scheme-tag dept-tag">🌾 Agriculture</span>
     </div>
   </div>
+</div>
+
+<!-- PRESENT GOING SURVEYS -->
+<div class="surveys-section" id="surveys">
+  <div class="section-title">Present Going Surveys</div>
+  <div class="section-sub">Ongoing government surveys currently being conducted in Damagatla village — residents are requested to cooperate with field staff</div>
+
+  <div class="surveys-grid">
+
+    <!-- Unified Family Survey -->
+    <div class="survey-card">
+      <div class="survey-pulse">ONGOING</div>
+      <div class="survey-icon">🏠</div>
+      <div class="survey-name">Unified Family Survey</div>
+      <div class="survey-telugu">యూనిఫైడ్ ఫ్యామిలీ సర్వే</div>
+      <div class="survey-desc">A comprehensive household-level survey to collect socio-economic data of every family in the village. Details such as income, land holding, occupation, education, and access to government schemes are recorded to identify eligible beneficiaries for welfare programmes.</div>
+      <div class="survey-meta">
+        <span class="survey-tag">🏠 Household</span>
+        <span class="survey-tag blue">📋 Data Collection</span>
+        <span class="survey-tag">🤝 Welfare Dept</span>
+        <span class="survey-tag orange">⏳ In Progress</span>
+      </div>
+    </div>
+
+    <!-- Population Census -->
+    <div class="survey-card">
+      <div class="survey-pulse">ONGOING</div>
+      <div class="survey-icon">👥</div>
+      <div class="survey-name">Population Census</div>
+      <div class="survey-telugu">జనాభా లెక్కలు</div>
+      <div class="survey-desc">Village-level enumeration of all residents to update the official population register. Every individual, their age, gender, caste category, and residential status is recorded. This data is used for planning schools, health services, ration cards, and infrastructure allocation.</div>
+      <div style="margin-top:12px;background:#E3F0FF;border:1px solid #90B8E8;border-radius:6px;padding:10px 14px;">
+        <div style="font-size:11px;color:#003F87;font-family:'Petrona',serif;font-weight:600;margin-bottom:6px;letter-spacing:0.5px;">🏛️ GOVERNMENT OF INDIA — CENSUS PORTAL</div>
+        <a href="https://se.census.gov.in/" target="_blank" style="display:flex;align-items:center;gap:8px;text-decoration:none;">
+          <span style="font-size:18px;">🔐</span>
+          <span style="font-family:'Petrona',serif;font-size:13px;font-weight:600;color:#003F87;">Self-Enumeration (HLO) Login</span>
+        </a>
+        <div style="font-size:11px;color:#3A5A8A;margin-top:4px;font-family:'Petrona',serif;">se.census.gov.in — Tap to open portal</div>
+      </div>
+      <div class="survey-meta">
+        <span class="survey-tag">👥 Enumeration</span>
+        <span class="survey-tag blue">📊 Census Data</span>
+        <span class="survey-tag">🏛️ Revenue Dept</span>
+        <span class="survey-tag orange">⏳ In Progress</span>
+      </div>
+    </div>
+
+    <!-- WhatsApp Training -->
+    <div class="survey-card">
+      <div class="survey-pulse">ONGOING</div>
+      <div class="survey-icon">📱</div>
+      <div class="survey-name">WhatsApp Mana Mitra</div>
+      <div class="survey-telugu">వాట్సాప్ మన మిత్ర</div>
+      <div class="survey-desc">Digital literacy and awareness training for village residents and staff on the effective use of WhatsApp for receiving government notifications, scheme updates, and important announcements. Focuses on safe usage, avoiding misinformation, and connecting with Panchayat staff online.</div>
+      <div style="margin-top:12px;background:#E8F5E9;border:1px solid #A5D6A7;border-radius:6px;padding:10px 14px;">
+        <div style="font-size:11px;color:#2E7D44;font-family:'Petrona',serif;font-weight:600;margin-bottom:6px;letter-spacing:0.5px;">🏛️ GOVERNMENT OF ANDHRA PRADESH</div>
+        <a href="https://wa.me/919552300009" target="_blank" style="display:flex;align-items:center;gap:8px;text-decoration:none;">
+          <span style="font-size:18px;">💬</span>
+          <span style="font-family:'Petrona',serif;font-size:14px;font-weight:600;color:#1A5C2A;">+91 95523 00009</span>
+        </a>
+        <div style="font-size:11px;color:#4A7A5A;margin-top:4px;font-family:'Petrona',serif;">Tap to open in WhatsApp</div>
+      </div>
+      <div class="survey-meta">
+        <span class="survey-tag">📱 Digital Literacy</span>
+        <span class="survey-tag blue">🌐 Technology</span>
+        <span class="survey-tag">🎓 Training</span>
+        <span class="survey-tag orange">⏳ In Progress</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- STAFF RESOURCES (ONE-STOP) -->
+<div class="resources-section" id="resources">
+  <div class="section-title">📚 Staff Resource Centre — One-Stop Reference</div>
+  <div class="section-sub">Manuals, APK downloads, portals & step-by-step guides for all ongoing surveys · For official use by Damagatla SGSW field staff</div>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- 1. UNIFIED FAMILY SURVEY -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <div class="res-survey-block">
+    <div class="res-survey-heading green">
+      <div class="res-survey-heading-icon">🏠</div>
+      <div class="res-survey-heading-text">
+        <div class="res-survey-heading-title">Unified Family Survey (UFS) — ఏపీ యూనిఫైడ్ ఫ్యామిలీ సర్వే</div>
+        <div class="res-survey-heading-sub">Government of Andhra Pradesh · GSWS Household Database Update · Started Dec 23, 2025</div>
+      </div>
+    </div>
+
+    <div class="res-cards-grid">
+
+      <div class="res-card">
+        <div class="res-card-icon">📱</div>
+        <div class="res-card-title">Official UFS App (Android)</div>
+        <div class="res-card-desc">Official Unified Family Survey mobile app by Govt. of AP — for authorized GSWS surveyors only. Supports Aadhaar eKYC, offline data entry, geo-tagging, and GSWS database integration.</div>
+        <div class="res-card-actions">
+          <a class="res-btn green" href="https://play.google.com/store/apps/details?id=com.codetree.hhsurvey" target="_blank">▶ Google Play</a>
+          <a class="res-btn amber" href="https://apkpure.com/unified-family-survey/com.codetree.hhsurvey" target="_blank">⬇ APK (APKPure)</a>
+        </div>
+      </div>
+
+      <div class="res-card">
+        <div class="res-card-icon">📖</div>
+        <div class="res-card-title">User Manual (Official PDF)</div>
+        <div class="res-card-desc">Official AP Government UFS Mobile Application User Manual — step-by-step login, dashboard, household selection, eKYC, data entry, and survey submission process.</div>
+        <div class="res-card-actions">
+          <a class="res-btn blue" href="https://studybizz.com/schemes/wp-content/uploads/2025/12/wp-1765867899324.pdf" target="_blank">⬇ Download Manual PDF</a>
+        </div>
+      </div>
+
+      <div class="res-card">
+        <div class="res-card-icon">🌐</div>
+        <div class="res-card-title">Official UFS Portal</div>
+        <div class="res-card-desc">Government of Andhra Pradesh official Unified Family Survey web portal for data management, supervisory access, and status tracking.</div>
+        <div class="res-card-actions">
+          <a class="res-btn teal" href="https://unifiedfamilysurvey.ap.gov.in/" target="_blank">🔗 Open Portal</a>
+          <a class="res-btn blue" href="https://gsws.ap.gov.in/" target="_blank">🔗 GSWS Portal</a>
+        </div>
+      </div>
+
+      <div class="res-card">
+        <div class="res-card-icon">📋</div>
+        <div class="res-card-title">Survey Questions Guide</div>
+        <div class="res-card-desc">Complete list of Individual-level and Family-level questions asked in the UFS app — Aadhaar details, income, assets, land, vehicles, housing type, and scheme eligibility data.</div>
+        <div class="res-card-actions">
+          <a class="res-btn gold" href="https://www.gswshelper.com/2025/12/unified-family-survey-app-survey-process.html" target="_blank">📋 View Questions Guide</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="res-steps-box">
+      <div class="res-steps-title">⚡ UFS APP — QUICK STEPS FOR FIELD STAFF</div>
+      <div class="res-steps">
+        <div class="res-step"><div class="res-step-num">1</div><div class="res-step-text">Open UFS App → Enable Internet + GPS + Location</div></div>
+        <div class="res-step"><div class="res-step-num">2</div><div class="res-step-text">Login with Aadhaar Number + Captcha → Receive OTP</div></div>
+        <div class="res-step"><div class="res-step-num">3</div><div class="res-step-text">Dashboard → Select Category / Search Household (Aadhaar or Name)</div></div>
+        <div class="res-step"><div class="res-step-num">4</div><div class="res-step-text">Verify member details → Add/Remove members via eKYC</div></div>
+        <div class="res-step"><div class="res-step-num">5</div><div class="res-step-text">Fill Individual + Family level questions → Capture geo-tag</div></div>
+        <div class="res-step"><div class="res-step-num">6</div><div class="res-step-text">Submit survey → Confirm success message</div></div>
+      </div>
+    </div>
+
+    <div class="res-notice">
+      <div class="res-notice-icon">⚠️</div>
+      <div class="res-notice-text"><strong>Important:</strong> UFS app is authorised for GSWS surveyors only. Data collected via Aadhaar eKYC is used solely for welfare scheme delivery. Families are categorised as Poor / Middle / Higher income based on socio-economic data. Ensure GPS is active before beginning each household survey. G.O.Rt.No:207 governs this survey.</div>
+    </div>
+  </div>
+
+  <div class="res-divider"></div>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- 2. POPULATION CENSUS 2027 (HLO) -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <div class="res-survey-block">
+    <div class="res-survey-heading blue">
+      <div class="res-survey-heading-icon">👥</div>
+      <div class="res-survey-heading-text">
+        <div class="res-survey-heading-title">Population Census 2027 — Phase I: Houselisting & Housing Census (HLO)</div>
+        <div class="res-survey-heading-sub">Government of India · Office of Registrar General &amp; Census Commissioner · Phase I: April–September 2026 · Andhra Pradesh: May 1–30, 2026</div>
+      </div>
+    </div>
+
+    <div class="res-cards-grid">
+
+      <div class="res-card">
+        <div class="res-card-icon">📱</div>
+        <div class="res-card-title">HLO Mobile App (Enumerator)</div>
+        <div class="res-card-desc">Secure offline app for enumerators to collect and upload houselisting data. Registered on CMMS portal only. Works on Android &amp; iOS in 16 languages including Telugu. App ID: <strong>com.cdac.hlo</strong></div>
+        <div class="res-card-actions">
+          <a class="res-btn green" href="https://play.google.com/store/apps/details?id=com.cdac.hlo" target="_blank">▶ Google Play (HLO)</a>
+        </div>
+      </div>
+
+      <div class="res-card">
+        <div class="res-card-icon">🎓</div>
+        <div class="res-card-title">HLO Training App</div>
+        <div class="res-card-desc">Separate training/practice app for Census 2027 Houselisting operations. Use this to train yourself and team before conducting actual field enumeration. App ID: <strong>com.census.houselist</strong></div>
+        <div class="res-card-actions">
+          <a class="res-btn teal" href="https://play.google.com/store/apps/details?id=com.census.houselist" target="_blank">▶ Training App (Play)</a>
+        </div>
+      </div>
+
+      <div class="res-card">
+        <div class="res-card-icon">🔐</div>
+        <div class="res-card-title">Self-Enumeration Portal (SE)</div>
+        <div class="res-card-desc">Official portal for citizens to self-enumerate online. Login with mobile number → Select State → Fill household details → Submit → Receive SE ID. Share SE ID with enumerator during field visit.</div>
+        <div class="res-card-actions">
+          <a class="res-btn blue" href="https://se.census.gov.in/" target="_blank">🔗 se.census.gov.in</a>
+        </div>
+      </div>
+
+      <div class="res-card">
+        <div class="res-card-icon">🖥️</div>
+        <div class="res-card-title">CMMS Portal</div>
+        <div class="res-card-desc">Census Management &amp; Monitoring System — for supervisors and charge officers to track enumeration progress, manage HLO blocks, bulk user creation, and monitor field performance in real time.</div>
+        <div class="res-card-actions">
+          <a class="res-btn purple" href="https://censusindia.gov.in/census.website/en" target="_blank">🔗 censusindia.gov.in</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="res-cards-grid-3" style="margin-top:12px;">
+
+      <div class="res-card">
+        <div class="res-card-icon">📄</div>
+        <div class="res-card-title">CMMS Complete Guide PDF</div>
+        <div class="res-card-desc">Comprehensive PDF covering CMMS Modules, Features, User Management, and HLO Management — for supervisors and charge officers.</div>
+        <div class="res-card-actions">
+          <a class="res-btn blue" href="https://mainpuri.nic.in/census-of-india-2027-tutorials/" target="_blank">⬇ Tutorials &amp; PDF Links</a>
+        </div>
+      </div>
+
+      <div class="res-card">
+        <div class="res-card-icon">📖</div>
+        <div class="res-card-title">HLO App Usage Guide (Telugu)</div>
+        <div class="res-card-desc">Detailed step-by-step guide for enumerators and supervisors — registration, login, 4-digit PIN, data entry, SE ID handling, syncing data. Available with Telugu language support.</div>
+        <div class="res-card-actions">
+          <a class="res-btn gold" href="https://teachernews.in/census-2027-hlo-mobile-app-usage-guide/" target="_blank">📖 Read Usage Guide</a>
+        </div>
+      </div>
+
+      <div class="res-card">
+        <div class="res-card-icon">📰</div>
+        <div class="res-card-title">SE Step-by-Step Guide</div>
+        <div class="res-card-desc">Complete citizen guide for self-enumeration — select state, enter household head name, mobile OTP, fill questions in Telugu, receive SE Reference ID. Share with village residents.</div>
+        <div class="res-card-actions">
+          <a class="res-btn teal" href="https://mpcnews.in/self-enumeration-at-se-census-gov-in-guide/" target="_blank">📋 SE Full Guide</a>
+          <a class="res-btn blue" href="https://en.vikaspedia.in/viewcontent/social-welfare/community-power/census-2027/user-guide-for-self-enumeration-of-census-2027?lgn=en" target="_blank">📖 Vikaspedia Guide</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="res-steps-box">
+      <div class="res-steps-title">⚡ CENSUS HLO — ANDHRA PRADESH SCHEDULE & QUICK STEPS</div>
+      <div class="res-steps">
+        <div class="res-step"><div class="res-step-num">1</div><div class="res-step-text"><strong>AP Self-Enumeration Window:</strong> April 16–30, 2026 — residents fill at se.census.gov.in</div></div>
+        <div class="res-step"><div class="res-step-num">2</div><div class="res-step-text"><strong>AP House-to-House HLO:</strong> May 1–30, 2026 — enumerators visit each household</div></div>
+        <div class="res-step"><div class="res-step-num">3</div><div class="res-step-text">Ask household for SE ID (if self-enumerated) → Enter in HLO app to confirm data</div></div>
+        <div class="res-step"><div class="res-step-num">4</div><div class="res-step-text">Collect housing condition, amenities, assets data → sync to server regularly</div></div>
+        <div class="res-step"><div class="res-step-num">5</div><div class="res-step-text"><strong>Phase II (Population Enumeration):</strong> February 2027 — individual demographic + caste data</div></div>
+      </div>
+    </div>
+
+    <div class="res-notice">
+      <div class="res-notice-icon">⚠️</div>
+      <div class="res-notice-text"><strong>Important:</strong> HLO app is accessible only to enumerators registered on CMMS portal. The app works offline — sync data regularly to avoid loss. One device per registered user. Phase I covers housing and amenities data. Phase II (Feb 2027) will cover individual demographics and first-ever caste enumeration since 1931. All data is protected under Census Act, 1948 — strictly confidential.</div>
+    </div>
+  </div>
+
+  <div class="res-divider"></div>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- 3. WHATSAPP MANA MITRA -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <div class="res-survey-block">
+    <div class="res-survey-heading amber">
+      <div class="res-survey-heading-icon">📱</div>
+      <div class="res-survey-heading-text">
+        <div class="res-survey-heading-title">WhatsApp Mana Mitra — వాట్సాప్ మన మిత్ర Governance Training</div>
+        <div class="res-survey-heading-sub">Government of Andhra Pradesh · 738+ Services across 36 Departments · WhatsApp Number: +91 95523 00009 · Every Friday Door-to-Door Campaign</div>
+      </div>
+    </div>
+
+    <div class="res-cards-grid">
+
+      <div class="res-card">
+        <div class="res-card-icon">💬</div>
+        <div class="res-card-title">Mana Mitra WhatsApp Number</div>
+        <div class="res-card-desc">India's first WhatsApp governance platform. Save this number → Send "Hi" → Choose language (EN/TE) → Select Department → Select Service → Fill form → Pay if needed → Receive certificate on WhatsApp.</div>
+        <div class="res-card-actions">
+          <a class="res-btn green" href="https://wa.me/919552300009" target="_blank">💬 Open WhatsApp Chat</a>
+        </div>
+      </div>
+
+      <div class="res-card">
+        <div class="res-card-icon">📱</div>
+        <div class="res-card-title">GSWS Employees App</div>
+        <div class="res-card-desc">Official app for GSWS staff to conduct the Mana Mitra door-to-door campaign. Select household from cluster → explain services by department → complete biometric/face verification → mark as done.</div>
+        <div class="res-card-actions">
+          <a class="res-btn green" href="https://play.google.com/store/search?q=gsws+employees+app&c=apps" target="_blank">▶ GSWS Employee App</a>
+        </div>
+      </div>
+
+      <div class="res-card">
+        <div class="res-card-icon">📖</div>
+        <div class="res-card-title">Mana Mitra Services Guide</div>
+        <div class="res-card-desc">Complete guide to 738+ services across Revenue, Energy, Agriculture, Health, Municipal, Police, APSRTC, Endowments, CM Relief Fund departments. Share this with every household during campaign.</div>
+        <div class="res-card-actions">
+          <a class="res-btn gold" href="https://www.gswshelper.com/2025/09/mana-mitra-whatsapp-governance-services-2025-cluster-mapping.html" target="_blank">📋 Services List &amp; Guide</a>
+          <a class="res-btn blue" href="https://www.chvblog.com/2025/02/whatsapp-ap-government-services.html" target="_blank">📖 Step-by-Step Guide</a>
+        </div>
+      </div>
+
+      <div class="res-card">
+        <div class="res-card-icon">🗺️</div>
+        <div class="res-card-title">Campaign &amp; Cluster Mapping</div>
+        <div class="res-card-desc">Every Friday, Sachivalayam staff must do door-to-door awareness in assigned clusters. Map your cluster → visit each family → demonstrate at least 1 service → biometric verify → submit campaign report.</div>
+        <div class="res-card-actions">
+          <a class="res-btn amber" href="https://www.gswshelper.com/2025/11/ap-mana-mitra-whatsapp-governance-campaign-2025.html" target="_blank">📍 Campaign Guidelines</a>
+          <a class="res-btn teal" href="https://www.gswshelper.com/2026/04/ap-mana-mitra-whatsapp-governance-training-guide.html" target="_blank">🎓 Training Guide</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="res-steps-box">
+      <div class="res-steps-title">⚡ MANA MITRA — HOW TO HELP A CITIZEN GET A SERVICE (4 STEPS)</div>
+      <div class="res-steps">
+        <div class="res-step"><div class="res-step-num">1</div><div class="res-step-text">Save 9552300009 as "Mana Mitra" → Open WhatsApp → Send "Hi"</div></div>
+        <div class="res-step"><div class="res-step-num">2</div><div class="res-step-text">Type "TE" for Telugu / "EN" for English → Select Department from menu</div></div>
+        <div class="res-step"><div class="res-step-num">3</div><div class="res-step-text">Select Service → Fill application form → Upload documents (PDF, under 10MB each)</div></div>
+        <div class="res-step"><div class="res-step-num">4</div><div class="res-step-text">Pay if applicable → Receive receipt instantly → Download approved certificate as PDF</div></div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px;">
+      <div class="res-card">
+        <div class="res-card-icon">🏛️</div>
+        <div class="res-card-title">Key Services Available via Mana Mitra</div>
+        <div class="res-card-desc" style="columns:2;column-gap:10px;margin-top:4px;">
+          • Revenue Certificates (BC/OC/SC/ST)<br>
+          • Income &amp; Caste Certificates<br>
+          • EWS Certificate<br>
+          • NTR Health Card Status<br>
+          • Thalliki Vandanam Status<br>
+          • Deepam (Gas) Scheme Status<br>
+          • APSRTC Bus Bookings<br>
+          • Electricity Bill Payment<br>
+          • Water Connection Requests<br>
+          • Property Tax Payment<br>
+          • AP Police Services<br>
+          • CM Relief Fund Applications<br>
+          • Temple Endowment Services<br>
+          • Pensions (NTR Bharosa) Status
+        </div>
+      </div>
+      <div class="res-card">
+        <div class="res-card-icon">⚙️</div>
+        <div class="res-card-title">Staff Campaign Checklist</div>
+        <div class="res-card-desc" style="margin-top:4px;">
+          ✅ Every <strong>Friday</strong> — door-to-door Mana Mitra awareness campaign<br><br>
+          ✅ Open GSWS Employee App → Select your cluster<br><br>
+          ✅ Explain Mana Mitra services to each family (department-wise)<br><br>
+          ✅ Help at least 1 family member use a service<br><br>
+          ✅ Complete Biometric / Face / Iris verification<br><br>
+          ✅ Mark household as "Campaign Completed" in app<br><br>
+          ✅ <strong>Eligible trainees:</strong> Citizens aged 18–60 years
+        </div>
+      </div>
+    </div>
+
+    <div class="res-notice">
+      <div class="res-notice-icon">⚠️</div>
+      <div class="res-notice-text"><strong>Important:</strong> Certificates received via Mana Mitra are QR-coded and linked to official government websites — valid for official use. Documents must be in PDF format, each under 10 MB, uploaded separately. If household data and Aadhaar address are in different districts, applications may be rejected — verify before submitting. For non-AP residents or mismatched records, advise citizens to visit the Secretariat office.</div>
+    </div>
+  </div>
+
 </div>
 
 <!-- STAFF -->
