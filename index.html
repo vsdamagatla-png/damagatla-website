@@ -97,6 +97,11 @@ body{font-family:'Petrona',Georgia,serif;background:var(--cream);color:var(--tex
 .surveys-section .section-title::after{background:linear-gradient(90deg,#1A5C2A,transparent);}
 .surveys-section .section-sub{color:#2E7D44;}
 .surveys-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+@media(max-width:900px){.surveys-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:600px){
+  .surveys-section{padding:24px 16px;}
+  .surveys-grid{grid-template-columns:1fr;}
+}
 .survey-card{background:#fff;border:0.5px solid #A5D6A7;border-top:4px solid #1A5C2A;border-radius:10px;padding:20px;position:relative;overflow:hidden;transition:box-shadow 0.2s,transform 0.2s;}
 .survey-card:hover{box-shadow:0 6px 24px rgba(26,92,42,0.15);transform:translateY(-2px);}
 .survey-card::before{content:'';position:absolute;top:0;right:0;width:80px;height:80px;background:radial-gradient(circle,rgba(26,92,42,0.06) 0%,transparent 70%);}
@@ -128,6 +133,25 @@ body{font-family:'Petrona',Georgia,serif;background:var(--cream);color:var(--tex
 .res-survey-heading-sub{font-size:12px;color:#90CAF9;}
 .res-cards-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
 .res-cards-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+@media(max-width:900px){
+  .res-cards-grid{grid-template-columns:repeat(2,1fr);}
+  .res-cards-grid-3{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:600px){
+  .resources-section{padding:24px 16px;}
+  .res-cards-grid{grid-template-columns:1fr;}
+  .res-cards-grid-3{grid-template-columns:1fr;}
+  .res-survey-heading{flex-direction:column;gap:8px;align-items:flex-start;}
+  .res-survey-heading-title{font-size:14px;}
+  .res-survey-heading-sub{font-size:11px;}
+  .res-steps{flex-direction:column;}
+  .res-step{min-width:unset;width:100%;}
+  .res-card-actions{flex-direction:column;}
+  .res-btn{justify-content:center;text-align:center;width:100%;box-sizing:border-box;}
+  .res-card-desc{font-size:12px;}
+  .res-steps-box{padding:12px;}
+  .res-notice{flex-direction:column;gap:6px;}
+}
 .res-card{background:rgba(255,255,255,0.06);border:0.5px solid rgba(255,255,255,0.12);border-radius:8px;padding:14px;display:flex;flex-direction:column;gap:8px;transition:background 0.2s;}
 .res-card:hover{background:rgba(255,255,255,0.10);}
 .res-card-icon{font-size:22px;}
@@ -1099,11 +1123,11 @@ body{font-family:'Petrona',Georgia,serif;background:var(--cream);color:var(--tex
       </div>
     </div>
 
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px;">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin-top:12px;">
       <div class="res-card">
         <div class="res-card-icon">🏛️</div>
         <div class="res-card-title">Key Services Available via Mana Mitra</div>
-        <div class="res-card-desc" style="columns:2;column-gap:10px;margin-top:4px;">
+        <div class="res-card-desc" style="margin-top:4px;">
           • Revenue Certificates (BC/OC/SC/ST)<br>
           • Income &amp; Caste Certificates<br>
           • EWS Certificate<br>
