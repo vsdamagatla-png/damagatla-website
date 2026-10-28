@@ -584,6 +584,57 @@ body{font-family:'Petrona',Georgia,serif;background:var(--cream);color:var(--tex
 .sm-opt.ok{background:#1B5E20;border-color:#4CAF50}.sm-opt.no{background:#7f1d1d;border-color:#ef5350}
 .sm-score{color:#FFD700;font-weight:600;margin-top:10px}
 .sm-note{font-size:12px;color:#B0BEC5;margin-top:14px;line-height:1.6}
+
+/* Readability fix: MCQ text in the light Current Affairs section */
+#current-affairs .sm-q p,
+#current-affairs .sm-q p strong {
+  color: #17324D !important;
+}
+#current-affairs .sm-opt {
+  color: #17324D !important;
+  background: #FFFFFF !important;
+  border: 1px solid #8AA6C1 !important;
+  font-weight: 600;
+}
+#current-affairs .sm-opt:hover {
+  color: #102A43 !important;
+  background: #E8F2FF !important;
+  border-color: #245B8F !important;
+}
+#current-affairs .sm-opt.ok {
+  color: #FFFFFF !important;
+  background: #1B5E20 !important;
+  border-color: #2E7D32 !important;
+}
+#current-affairs .sm-opt.no {
+  color: #FFFFFF !important;
+  background: #8B1E1E !important;
+  border-color: #B71C1C !important;
+}
+#current-affairs .sm-score {
+  color: #17324D !important;
+}
+
+
+/* Make the APPSC Group-2 preparation area prominent in the main menu */
+.nav-links a.nav-appsc-highlight {
+  background: linear-gradient(135deg, #FFD54F, #FFB300) !important;
+  color: #172B4D !important;
+  font-weight: 800 !important;
+  border-radius: 7px;
+  margin: 3px 5px;
+  padding-left: 13px;
+  padding-right: 13px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.18);
+}
+.nav-links a.nav-appsc-highlight:hover,
+.nav-links a.nav-appsc-highlight:focus {
+  background: linear-gradient(135deg, #FFE082, #FFA000) !important;
+  color: #10213A !important;
+  outline: 2px solid #FFFFFF;
+  outline-offset: 1px;
+}
+
 </style>
 </head>
 <body>
@@ -629,7 +680,8 @@ body{font-family:'Petrona',Georgia,serif;background:var(--cream);color:var(--tex
       </div>
     </div>
     <a href="#surveys" onclick="closeMobileNav()">Surveys</a>
-    <a href="#resources" onclick="closeMobileNav()">📚 Resources</a>
+    <a href="#resources" class="nav-appsc-highlight" onclick="closeMobileNav()">🎯 APPSC Group-2</a>
+    <a href="#current-affairs" onclick="closeMobileNav()">📰 Today's Current Affairs</a>
     <a href="#staff" onclick="closeMobileNav()">Staff</a>
     <a href="#notices" onclick="closeMobileNav()">Notices</a>
     <a href="#gallery" onclick="closeMobileNav()">Gallery</a>
@@ -859,6 +911,103 @@ body{font-family:'Petrona',Georgia,serif;background:var(--cream);color:var(--tex
 
   </div>
 </div>
+
+
+<!-- APPSC GROUP-2 DAILY CURRENT AFFAIRS -->
+<div class="section" id="current-affairs" style="background:linear-gradient(180deg,#FFF9E8 0%,#F0F7F0 100%);border-top:4px solid #D4880A;">
+  <div class="section-title" style="color:#003F87;">📰 APPSC Group-2 — నేటి కరెంట్ అఫైర్స్</div>
+  <div class="section-sub">28 అక్టోబర్ 2026 · తెలుగు మీడియం · Prelims quick revision</div>
+  <div class="about-grid">
+    <div class="about-card" style="border-left-color:#D4880A;">
+      <h3>🌪️ 1. ఆంధ్రప్రదేశ్ తీరంలో Cyclone Arnab</h3>
+      <p><strong>విషయం:</strong> పర్యావరణం & విపత్తు నిర్వహణ</p>
+      <p>IMD ప్రకారం, అక్టోబర్ 28న Arnab తుఫాను ఆంధ్రప్రదేశ్–యానాం తీర ప్రాంతాన్ని దాటడం ప్రారంభించింది. తీర ప్రాంతాల్లో భారీ వర్షాలు, బలమైన గాలుల నేపథ్యంలో ప్రజలను సురక్షిత ప్రాంతాలకు తరలించారు.</p>
+      <p><strong>Group-2 గుర్తుంచుకోండి:</strong> IMD — భారత వాతావరణ విభాగం; తుఫాన్ల హెచ్చరికలు, వాతావరణ అంచనాలు.</p>
+      <p><a href="https://newsonair.gov.in/?cat=national" target="_blank" rel="noopener noreferrer">మూలం: Akashvani News</a> · <a href="https://www.pib.gov.in/PressReleseDetailm.aspx?PRID=2328434&lang=1&reg=1" target="_blank" rel="noopener noreferrer">PIB preparedness update</a></p>
+    </div>
+    <div class="about-card" style="border-left-color:#003F87;">
+      <h3>🛡️ 2. రక్షణ కొనుగోళ్లకు DAC ఆమోదం</h3>
+      <p><strong>విషయం:</strong> జాతీయ భద్రత & ఆర్థిక వ్యవస్థ</p>
+      <p>Defence Acquisition Council (DAC) సుమారు ₹2.12 లక్షల కోట్ల విలువైన రక్షణ కొనుగోలు ప్రతిపాదనలకు ఆమోదం తెలిపినట్లు నేటి కరెంట్ అఫైర్స్ నివేదికలు పేర్కొన్నాయి. దేశీయ పరిశ్రమ నుంచి కొనుగోళ్లకు ప్రాధాన్యం ఇవ్వడం ముఖ్యాంశం.</p>
+      <p><strong>Group-2 గుర్తుంచుకోండి:</strong> DAC = Defence Acquisition Council; రక్షణ కొనుగోళ్లకు సంబంధించిన కీలక సంస్థ.</p>
+      <p><a href="https://upscgurus.in/articles/current-canvas-28-october-2026/" target="_blank" rel="noopener noreferrer">మూలం: Daily current affairs brief</a></p>
+    </div>
+    <div class="about-card" style="border-left-color:#1A5C2A;">
+      <h3>🌐 3. 12వ BRICS Parliamentary Forum</h3>
+      <p><strong>విషయం:</strong> అంతర్జాతీయ సంబంధాలు</p>
+      <p>12వ BRICS పార్లమెంటరీ ఫోరం న్యూఢిల్లీలో అక్టోబర్ 26–27 తేదీల్లో జరిగింది. సమావేశం ముగింపులో New Delhi Joint Declaration ఆమోదించబడినట్లు నివేదికలు తెలిపాయి.</p>
+      <p><strong>Group-2 గుర్తుంచుకోండి:</strong> BRICS అనేది అభివృద్ధి చెందుతున్న ప్రధాన ఆర్థిక వ్యవస్థల మధ్య సహకార వేదిక.</p>
+      <p><a href="https://www.pib.gov.in/AllRelease.aspx?lang=1&reg=1" target="_blank" rel="noopener noreferrer">మూలం: Press Information Bureau (PIB)</a></p>
+    </div>
+    <div class="about-card" style="border-left-color:#8B5E3C;">
+      <h3>🤝 4. భారత్–కెనడా Migration & Mobility Dialogue</h3>
+      <p><strong>విషయం:</strong> ద్వైపాక్షిక సంబంధాలు</p>
+      <p>న్యూఢిల్లీలో భారత్, కెనడా మధ్య Migration and Mobility Dialogue నిర్వహించినట్లు నేటి వార్తా సమీక్ష పేర్కొంది. విద్యార్థులు, నైపుణ్య కార్మికుల చలనం వంటి అంశాలు చర్చకు వచ్చాయి.</p>
+      <p><strong>Group-2 కోణం:</strong> ద్వైపాక్షిక చర్చలు, వలసలు, నైపుణ్యాభివృద్ధి.</p>
+      <p><a href="https://upscgurus.in/articles/current-canvas-28-october-2026/" target="_blank" rel="noopener noreferrer">మూలం: Daily current affairs brief</a></p>
+    </div>
+    <div class="about-card" style="border-left-color:#1A4A6B;">
+      <h3>🌍 5. WMO Greenhouse Gas Bulletin</h3>
+      <p><strong>విషయం:</strong> పర్యావరణం</p>
+      <p>నేటి వార్తా సమీక్ష ప్రకారం, WMO బులెటిన్‌లో 2025లో వాతావరణంలోని కార్బన్ డయాక్సైడ్ సాంద్రత రికార్డు స్థాయి 426.8 ppmకు చేరినట్లు పేర్కొన్నారు.</p>
+      <p><strong>Group-2 గుర్తుంచుకోండి:</strong> WMO = World Meteorological Organization; ఐక్యరాజ్యసమితి వ్యవస్థలో వాతావరణ సంబంధిత ప్రత్యేక సంస్థ.</p>
+      <p><a href="https://upscgurus.in/articles/current-canvas-28-october-2026/" target="_blank" rel="noopener noreferrer">మూలం: Daily current affairs brief</a></p>
+    </div>
+    <div class="about-card" style="border-left-color:#6A1B9A;">
+      <h3>🔬 6. ESTIC 2026</h3>
+      <p><strong>విషయం:</strong> సైన్స్ & టెక్నాలజీ</p>
+      <p>Emerging Science, Technology and Innovation Conclave (ESTIC) 2026 న్యూఢిల్లీలోని భారత్ మండపంలో ప్రారంభమైనట్లు వార్తా సమీక్ష పేర్కొంది. ఫ్రంటియర్ టెక్నాలజీలు, డీప్-టెక్ స్టార్టప్‌లు ప్రధాన అంశాలు.</p>
+      <p><strong>Group-2 కోణం:</strong> పరిశోధన, ఆవిష్కరణలు, స్టార్టప్‌లు.</p>
+      <p><a href="https://upscgurus.in/articles/current-canvas-28-october-2026/" target="_blank" rel="noopener noreferrer">మూలం: Daily current affairs brief</a></p>
+    </div>
+  </div>
+
+  <div class="about-card" style="margin-top:20px;border-left-color:#003F87;">
+    <h3>📝 APPSC Group-2 — Practice MCQs</h3>
+    <div class="sm-q" data-answer="b">
+      <p><strong>1.</strong> భారత వాతావరణ విభాగం (IMD) ప్రధానంగా ఏ రంగానికి సంబంధించినది?</p>
+      <button class="sm-opt" onclick="checkCA(this,false)">A. బ్యాంకింగ్ నియంత్రణ</button>
+      <button class="sm-opt" onclick="checkCA(this,true)">B. వాతావరణ అంచనాలు మరియు హెచ్చరికలు</button>
+      <button class="sm-opt" onclick="checkCA(this,false)">C. ఎన్నికల నిర్వహణ</button>
+      <button class="sm-opt" onclick="checkCA(this,false)">D. ఉన్నత విద్య గుర్తింపు</button>
+    </div>
+    <div class="sm-q" data-answer="b">
+      <p><strong>2.</strong> WMO పూర్తి పేరు ఏమిటి?</p>
+      <button class="sm-opt" onclick="checkCA(this,false)">A. World Marine Organisation</button>
+      <button class="sm-opt" onclick="checkCA(this,true)">B. World Meteorological Organization</button>
+      <button class="sm-opt" onclick="checkCA(this,false)">C. World Mining Organisation</button>
+      <button class="sm-opt" onclick="checkCA(this,false)">D. World Monetary Office</button>
+    </div>
+    <div class="sm-q" data-answer="b">
+      <p><strong>3.</strong> DAC ఏ రంగానికి సంబంధించినది?</p>
+      <button class="sm-opt" onclick="checkCA(this,false)">A. వ్యవసాయం</button>
+      <button class="sm-opt" onclick="checkCA(this,true)">B. రక్షణ కొనుగోళ్లు</button>
+      <button class="sm-opt" onclick="checkCA(this,false)">C. ప్రజారోగ్యం</button>
+      <button class="sm-opt" onclick="checkCA(this,false)">D. పర్యాటకం</button>
+    </div>
+    <p id="ca-score" class="sm-score" aria-live="polite">మీ స్కోరు: 0 / 3</p>
+    <p class="sm-note">గమనిక: ఇవి 28-10-2026న లభించిన వార్తా సమీక్షల ఆధారంగా రూపొందించిన చదువు నోట్స్. ముఖ్యంగా తుఫాను/వాతావరణ పరిస్థితుల కోసం తాజా అధికారిక IMD హెచ్చరికలను చూడండి. రోజువారీ నవీకరణల కోసం PIB మరియు Akashvani అధికారిక వనరులను పరిశీలించండి.</p>
+  </div>
+</div>
+<script>
+(function(){
+  var caScore = 0, caAnswered = 0;
+  window.checkCA = function(button, correct){
+    var q = button.closest('.sm-q');
+    if(!q || q.dataset.done) return;
+    q.dataset.done = '1';
+    q.querySelectorAll('.sm-opt').forEach(function(b){ b.disabled = true; });
+    button.classList.add(correct ? 'ok' : 'no');
+    if(!correct){
+      var right = q.querySelectorAll('.sm-opt')[1];
+      if(right) right.classList.add('ok');
+    } else { caScore++; }
+    caAnswered++;
+    var score = document.getElementById('ca-score');
+    if(score) score.textContent = 'మీ స్కోరు: ' + caScore + ' / ' + caAnswered + ' (మొత్తం 3 ప్రశ్నలు)';
+  };
+})();
+</script>
 
 <!-- STAFF RESOURCES (ONE-STOP) -->
 <div class="resources-section" id="resources">
